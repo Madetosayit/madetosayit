@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Made to Say It — Things worth saying. Things worth giving.">
+<title>Made to Say It</title>
+<style>
+:root{
+  --cream:#fbf6f1;
+  --paper:#fffaf6;
+  --blush:#cf8575;
+  --blush-soft:#f5e7df;
+  --ink:#111111;
+  --muted:#4e4946;
+  --line:#eadbd3;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:Arial,Helvetica,sans-serif;
+}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+
+/* TOP BAR */
+.announcement{
+  height:42px;
+  background:#050505;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:0 16px;
+  font-size:14px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+.announcement .heart{color:var(--blush);margin-left:8px}
+
+/* NAVIGATION */
+.site-header{
+  background:rgba(255,250,246,.98);
+  border-bottom:1px solid #f0e6e0;
+}
+.nav{
+  min-height:142px;
+  width:min(1440px,96%);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:220px 1fr auto;
+  align-items:center;
+  gap:32px;
+}
+.logo-wrap{
+  display:flex;
+  align-items:center;
+}
+.logo-wrap img{
+  width:165px;
+  height:165px;
+  object-fit:contain;
+  margin-top:-8px;
+  margin-bottom:-8px;
+}
+.nav-center{
+  display:flex;
+  justify-content:center;
+  gap:46px;
+  font-size:17px;
+  letter-spacing:.045em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+.nav-center a:hover{color:var(--blush)}
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:24px;
+}
+.loop-btn{
+  min-height:52px;
+  border:1.5px solid var(--blush);
+  color:var(--blush);
+  border-radius:999px;
+  padding:0 24px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  letter-spacing:.04em;
+  white-space:nowrap;
+}
+.utility{
+  display:flex;
+  gap:18px;
+  align-items:center;
+}
+.utility svg{
+  width:25px;height:25px;
+  stroke:#111;
+  stroke-width:1.7;
+  fill:none;
+}
+
+/* HERO */
+.hero{
+  width:100%;
+  display:grid;
+  grid-template-columns:39% 61%;
+  min-height:630px;
+  background:var(--paper);
+  border-bottom:1px solid var(--line);
+}
+.hero-copy{
+  padding:72px 62px 64px 74px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.kicker{
+  color:var(--blush);
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-size:18px;
+  font-weight:700;
+  margin-bottom:14px;
+}
+.mini-divider{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:var(--blush);
+  margin-bottom:18px;
+}
+.mini-divider::before,
+.mini-divider::after{
+  content:"";
+  height:1px;
+  width:54px;
+  background:#d9a395;
+}
+.mini-divider span{font-size:16px}
+.hero h1{
+  margin:0 0 22px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:400;
+  font-size:clamp(50px,4.55vw,78px);
+  line-height:1.02;
+  letter-spacing:-.035em;
+}
+.hero h1 .accent{color:var(--blush)}
+.short-rule{
+  width:54px;
+  height:1px;
+  background:var(--blush);
+  margin:0 0 22px;
+}
+.hero-copy p{
+  max-width:470px;
+  font-size:20px;
+  line-height:1.55;
+  color:#211f1d;
+  margin:0 0 30px;
+}
+.hero-actions{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
+.btn{
+  min-height:50px;
+  padding:0 27px;
+  border-radius:7px;
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+.btn-primary{
+  background:var(--blush);
+  color:#fff;
+  border:1px solid var(--blush);
+}
+.btn-secondary{
+  background:transparent;
+  color:#111;
+  border:1.5px solid var(--blush);
+}
+
+.hero-media{
+  min-height:630px;
+  overflow:hidden;
+  background:#ede2db;
+}
+.hero-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+
+/* COLLECTION STRIP */
+.collection-strip{
+  background:var(--paper);
+  border-bottom:1px solid var(--line);
+  padding:26px 34px 34px;
+}
+.collection-title{
+  text-align:center;
+  font-size:23px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  margin:0;
+  font-weight:500;
+}
+.collection-divider{
+  margin:10px auto 19px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:14px;
+  color:var(--blush);
+}
+.collection-divider::before,
+.collection-divider::after{
+  content:"";
+  width:88px;
+  height:1px;
+  background:#d9a395;
+}
+.collection-grid{
+  max-width:1430px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(10,1fr);
+  gap:16px;
+}
+.cat{
+  text-align:center;
+  min-width:0;
+}
+.cat-icon{
+  width:74px;
+  height:74px;
+  margin:0 auto 9px;
+  border-radius:50%;
+  background:var(--blush-soft);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.cat-icon svg{
+  width:38px;
+  height:38px;
+  stroke:#111;
+  stroke-width:1.7;
+  fill:none;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.cat-label{
+  font-size:13px;
+  line-height:1.25;
+  font-weight:700;
+  text-transform:uppercase;
+}
+
+/* SECONDARY SECTIONS */
+.content{
+  width:min(1160px,92%);
+  margin:82px auto;
+}
+.story-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+.story-card{
+  background:#111;
+  color:white;
+  border-radius:24px;
+  padding:54px;
+}
+.story-card h2,
+.future h2{
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:400;
+  font-size:clamp(38px,4vw,62px);
+  line-height:1.02;
+  margin:0 0 20px;
+}
+.story-card p{color:#ddd6d2;line-height:1.7}
+.logo-card{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:24px;
+  min-height:480px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:36px;
+}
+.logo-card img{width:min(430px,90%)}
+.future{margin-top:82px}
+.future-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+.future-card{
+  border-top:1px solid #111;
+  padding:22px 10px;
+}
+.future-card small{
+  color:var(--blush);
+  letter-spacing:.14em;
+  font-weight:700;
+}
+.future-card h3{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:28px;
+  font-weight:400;
+  margin:22px 0 7px;
+}
+.future-card p{color:#6f6560;margin:0;line-height:1.5}
+.coming{
+  width:min(1160px,92%);
+  margin:82px auto 30px;
+  border-radius:28px;
+  padding:62px 26px;
+  text-align:center;
+  background:linear-gradient(135deg,#efc9bc,#f9e9e2);
+}
+.coming h2{
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:400;
+  font-size:clamp(40px,5vw,72px);
+  line-height:1;
+  margin:0 auto 16px;
+  max-width:900px;
+}
+.coming p{max-width:660px;margin:0 auto 28px;color:#5d4c46}
+footer{
+  width:min(1160px,92%);
+  margin:0 auto;
+  padding:34px 0 46px;
+  display:flex;
+  justify-content:space-between;
+  color:#736862;
+  font-size:14px;
+}
+
+/* TABLET */
+@media(max-width:1050px){
+  .nav{
+    grid-template-columns:170px 1fr auto;
+    gap:18px;
+  }
+  .logo-wrap img{width:140px;height:140px}
+  .nav-center{gap:22px;font-size:14px}
+  .utility{display:none}
+  .hero{grid-template-columns:45% 55%}
+  .hero-copy{padding:54px 34px}
+  .hero-copy p{font-size:17px}
+  .collection-grid{grid-template-columns:repeat(5,1fr);row-gap:26px}
+}
+
+/* MOBILE */
+@media(max-width:760px){
+  .announcement{
+    min-height:40px;
+    height:auto;
+    font-size:10px;
+    line-height:1.4;
+    padding:8px 12px;
+  }
+  .nav{
+    min-height:90px;
+    grid-template-columns:110px 1fr;
+    width:94%;
+  }
+  .logo-wrap img{
+    width:104px;
+    height:104px;
+  }
+  .nav-center{display:none}
+  .nav-right{justify-content:flex-end}
+  .loop-btn{
+    min-height:42px;
+    padding:0 14px;
+    font-size:12px;
+  }
+  .hero{
+    grid-template-columns:1fr;
+    min-height:auto;
+  }
+  .hero-copy{
+    padding:42px 27px 38px;
+  }
+  .kicker{font-size:14px}
+  .hero h1{
+    font-size:50px;
+    line-height:1;
+  }
+  .hero-copy p{
+    font-size:16px;
+    line-height:1.5;
+  }
+  .hero-media{min-height:410px}
+  .collection-strip{padding-left:16px;padding-right:16px}
+  .collection-title{font-size:18px}
+  .collection-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:24px 12px;
+  }
+  .cat-icon{width:70px;height:70px}
+  .story-grid{grid-template-columns:1fr}
+  .story-card{padding:38px 28px}
+  .future-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:8px}
+}
+</style>
+</head>
+
+<body>
+<div class="announcement">
+  Coming Soon &nbsp;•&nbsp; Things Worth Saying &nbsp;•&nbsp; Things Worth Giving
+  <span class="heart">♥</span>
+</div>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="logo-wrap" href="#top" aria-label="Made to Say It home">
+      <img src="made-to-say-it-logo.png" alt="Made to Say It">
+    </a>
+
+    <div class="nav-center">
+      <a href="#shop">Shop⌄</a>
+      <a href="#collections">Collections⌄</a>
+      <a href="#story">Our Story</a>
+      <a href="#coming-soon">Coming Soon</a>
+    </div>
+
+    <div class="nav-right">
+      <a class="loop-btn" href="#coming-soon">Stay in the loop ♥</a>
+      <div class="utility" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="M16 16l5 5"></path></svg>
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"></circle><path d="M5 22v-3a7 7 0 0 1 14 0v3"></path></svg>
+        <svg viewBox="0 0 24 24"><path d="M5 8h14l1 13H4L5 8z"></path><path d="M9 8V5a3 3 0 0 1 6 0v3"></path></svg>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="kicker">Made to Say It</div>
+      <div class="mini-divider"><span>♥</span></div>
+      <h1>
+        Things Worth <span class="accent">Saying.</span><br>
+        Things Worth <span class="accent">Giving.</span>
+      </h1>
+      <div class="short-rule"></div>
+      <p>
+        Expressive pieces for the things worth saying — and the people worth giving them to.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#shop">Explore the Shop</a>
+        <a class="btn btn-secondary" href="#story">Meet the Brand</a>
+      </div>
+    </div>
+
+    <div class="hero-media">
+      <img src="made-to-say-it-home-hero.png" alt="Made to Say It apparel, candle, mug, tote and notebook">
+    </div>
+  </section>
+
+  <section class="collection-strip" id="shop">
+    <h2 class="collection-title">Shop Our Collections</h2>
+    <div class="collection-divider">♥</div>
+
+    <div class="collection-grid" id="collections">
+
+      <a class="cat" href="#">
+        <div class="cat-icon">
+          <svg viewBox="0 0 48 48"><path d="M17 8l-8 5-5 10 8 4 3-5v18h18V22l3 5 8-4-5-10-8-5c-2 3-12 3-14 0z"/></svg>
+        </div>
+        <div class="cat-label">Apparel</div>
+      </a>
+
+      <a class="cat" href="#">
+        <div class="cat-icon">
+          <svg viewBox="0 0 48 48"><path d="M17 18h14v22H17z"/><path d="M24 18c-2-4-1-8 2-11 3 4 2 8-2 11z"/></svg>
+        </div>
+        <div class="cat-label">Candles</div>
+      </a>
+
+      <a class="cat" href="#">
+        <div class="cat-icon">
+          <svg viewBox="0 0 48 48"><path d="M10 13h23v24H10z"/><path d="M33 18h5a6 6 0 0 1 0 12h-5"/></svg>
+        </div>
+        <div class="cat-label">Mugs</div>
+      </a>
+
+      <a class="cat" href="#">
+        <div class="cat-icon">
+          <svg viewBox="0 0 48 48"><path d="M11 16h26v25H11z"/><path d="M18 16v-4a6 6 0 0 1 12 0v4"/></svg>
+        </div>
+        <div class="cat-label">Bags + Extras</div>
+      </a>
+
+      <a class="cat" href="#">
+        <div class="cat-icon">
+          <svg viewBox="0 0 48 48"><path d="M8 19h32v22H8z"/><path d="M24 19v22M8 26h32"/><path d="M24 19c-8-1-11-4-9-8 3-4 8 1 9 8zM24 19c8-1 11-4 9-8-3-4-8 1-9 8z"/></svg>
+        </div>
+        <div class="cat-label">Gifts</div>
+      </a>
+
+      <a class="cat" href="#">
+        <div class="cat-icon">
+          <svg viewBox="0 0 48 48"><path d="M24 40S7 30 7 18a9 9 0 0 1 17-4 9 9 0 0 1 17 4c0 12-17 22-17 22z"/></svg>
+        </div>
+        <div class="cat-label">Colombian<br>Collection</div>
+      </a>
+
+      <a class="cat" href="#">
+        <div class="cat-icon">
+          <svg viewBox="0 0 48 48"><path d="M27 4L13 26h11l-3 18 14-24H24z"/></svg>
+        </div>
+        <div class="cat-label">Properly<br>Unhinged</div>
+      </a>
+
+      <a class="cat" href="#">
+        <div class="cat-icon">
+          <svg viewBox="0 0 48 48"><path d="M8 10h32v23H23l-9 7 2-7H8z"/></svg>
+        </div>
+        <div class="cat-label">Say It in<br>Spanish</div>
+      </a>
+
+      <a class="cat" href="#">
+        <div class="cat-icon">
+          <svg viewBox="0 0 48 48"><path d="M6 22L24 7l18 15"/><path d="M11 20v21h26V20"/><path d="M20 41V28h8v13"/></svg>
+        </div>
+        <div class="cat-label">Home +<br>Gifts</div>
+      </a>
+
+      <a class="cat" href="#">
+        <div class="cat-icon">
+          <svg viewBox="0 0 48 48"><path d="M24 11c-9 0-15 7-15 17s6 15 15 15 15-5 15-15-6-17-15-17z"/><path d="M24 11V5M19 6c3 0 5 1 5 5M18 12c-5 8-5 21 0 29M30 12c5 8 5 21 0 29"/></svg>
+        </div>
+        <div class="cat-label">Seasonal</div>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="content" id="story">
+    <div class="story-grid">
+      <div class="story-card">
+        <div class="kicker">Our Story</div>
+        <h2>Made for the things you just have to say.</h2>
+        <p>
+          Made to Say It is a gift and lifestyle brand built around personality.
+          Some pieces are funny. Some are sentimental. Some only make sense if you know, you know.
+        </p>
+        <p>
+          The common thread is simple: products that help you say something,
+          remember something, or give someone something that feels personal.
+        </p>
+      </div>
+      <div class="logo-card">
+        <img src="made-to-say-it-logo.png" alt="Made to Say It logo">
+      </div>
+    </div>
+
+    <div class="future">
+      <div class="kicker">Future Collections</div>
+      <h2>One brand. Lots of personality.</h2>
+      <div class="future-grid">
+        <div class="future-card"><small>01</small><h3>Properly Unhinged</h3><p>Sarcastic, cheeky and slightly chaotic.</p></div>
+        <div class="future-card"><small>02</small><h3>Say It in Spanish</h3><p>Spanish sayings, humor and expressions.</p></div>
+        <div class="future-card"><small>03</small><h3>Home + Gifts</h3><p>Candles, mugs, décor and giftable favorites.</p></div>
+        <div class="future-card"><small>04</small><h3>Seasonal</h3><p>Halloween, Christmas and moments worth celebrating.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="coming" id="coming-soon">
+    <div class="kicker">Coming Soon</div>
+    <h2>The shop is getting ready to say something.</h2>
+    <p>
+      Soon these collection buttons can connect directly to your Etsy shop and individual products.
+    </p>
+    <a class="btn btn-primary" href="#top">Back to the Top</a>
+  </section>
+</main>
+
+<footer>
+  <div>© 2026 Made to Say It. All rights reserved.</div>
+  <div>Things worth saying • Things worth giving</div>
+</footer>
+
+</body>
+</html>
