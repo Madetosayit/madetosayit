@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop | Made to Say It</title>
+  <meta name="description" content="Shop Made to Say It — expressive pieces, thoughtful gifts, and collections worth saying something about." />
+  <style>
+    :root{
+      --cream:#fbf6f1;
+      --paper:#fffaf6;
+      --blush:#cf8575;
+      --ink:#111111;
+      --muted:#5a514d;
+      --line:#eadbd3;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--cream)}
+    a{color:inherit;text-decoration:none}
+    .announcement{background:#111;color:#fff;text-align:center;padding:11px 16px;letter-spacing:2px;font-size:12px;text-transform:uppercase}
+    .nav{min-height:138px;display:grid;grid-template-columns:220px 1fr auto;align-items:center;gap:24px;padding:14px 46px;background:var(--paper);border-bottom:1px solid var(--line)}
+    .logo img{width:165px;height:165px;object-fit:contain;display:block}
+    .menu{display:flex;justify-content:center;align-items:center;gap:44px;font-size:14px;letter-spacing:1px;text-transform:uppercase}
+    .menu a:hover{color:var(--blush)}
+    .nav-actions{display:flex;align-items:center;gap:18px}
+    .loop{border:1px solid var(--blush);color:#7e4b42;border-radius:999px;padding:14px 22px;font-size:13px;font-weight:700;letter-spacing:.4px}
+    .hero{padding:86px 24px 64px;text-align:center;background:linear-gradient(to bottom,var(--paper),var(--cream))}
+    .eyebrow{color:#8b5147;letter-spacing:3px;text-transform:uppercase;font-size:13px;font-weight:700;margin-bottom:18px}
+    h1{margin:0 auto;max-width:900px;font-family:Georgia,'Times New Roman',serif;font-size:clamp(48px,6vw,82px);line-height:1.02;font-weight:400}
+    h1 .accent{color:var(--blush)}
+    .divider{margin:22px auto;display:flex;justify-content:center;align-items:center;gap:12px;color:var(--blush)}
+    .divider:before,.divider:after{content:"";width:42px;height:1px;background:var(--line)}
+    .hero p{max-width:720px;margin:0 auto;color:var(--muted);font-size:17px;line-height:1.75}
+    .coming{display:inline-block;margin-top:28px;border:1px solid var(--ink);padding:13px 22px;text-transform:uppercase;font-size:12px;letter-spacing:2px}
+    .section{max-width:1240px;margin:0 auto;padding:70px 26px 90px}
+    .section-title{text-align:center;margin-bottom:42px}
+    .section-title h2{margin:0;font-family:Georgia,'Times New Roman',serif;font-size:42px;font-weight:400}
+    .section-title p{color:var(--muted);margin:12px auto 0;max-width:680px;line-height:1.7}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .card{background:var(--paper);border:1px solid var(--line);min-height:310px;padding:34px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
+    .card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 72% 28%,rgba(207,133,117,.20),transparent 26%),radial-gradient(circle at 25% 35%,rgba(234,219,211,.75),transparent 30%);pointer-events:none}
+    .badge{position:absolute;top:22px;right:22px;border:1px solid var(--blush);color:#8b5147;background:rgba(255,250,246,.92);padding:8px 12px;border-radius:999px;font-size:11px;text-transform:uppercase;letter-spacing:1.6px;z-index:1}
+    .card-content{position:relative;z-index:1}
+    .card h3{font-family:Georgia,'Times New Roman',serif;font-size:34px;margin:0 0 10px;font-weight:400}
+    .card p{margin:0;color:var(--muted);line-height:1.65;max-width:92%}
+    .note{margin-top:34px;text-align:center;color:#7b6f69;font-size:13px}
+    footer{background:#111;color:#fff;padding:44px 24px;text-align:center}
+    footer .brand{font-family:Georgia,'Times New Roman',serif;font-size:28px;margin-bottom:8px}
+    footer p{margin:0;color:#d7ceca;font-size:13px}
+    @media (max-width:1050px){
+      .nav{grid-template-columns:160px 1fr;padding:12px 24px}
+      .logo img{width:135px;height:135px}
+      .nav-actions{grid-column:1/-1;justify-content:center;padding-bottom:12px}
+      .menu{gap:24px;flex-wrap:wrap}
+      .grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:760px){
+      .nav{display:flex;flex-direction:column;gap:14px;padding:18px}
+      .logo img{width:130px;height:130px}
+      .menu{gap:14px 20px;font-size:12px}
+      .nav-actions{gap:14px}
+      .hero{padding-top:54px}
+      .grid{grid-template-columns:1fr}
+      .section{padding-top:54px}
+      .card{min-height:250px}
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement">COMING SOON • THINGS WORTH SAYING • THINGS WORTH GIVING ♥</div>
+  <header class="nav">
+    <a class="logo" href="index.html" aria-label="Made to Say It home">
+      <img src="made-to-say-it-logo.png" alt="Made to Say It logo" />
+    </a>
+    <nav class="menu" aria-label="Main navigation">
+      <a href="shop.html">Shop</a>
+      <a href="collections.html">Collections</a>
+      <a href="our-story.html">Our Story</a>
+      <a href="coming-soon.html">Coming Soon</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="loop" href="coming-soon.html">Stay in the loop ♥</a>
+      <span aria-hidden="true">⌕</span>
+      <span aria-hidden="true">♙</span>
+      <span aria-hidden="true">▢</span>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="eyebrow">Made to Say It</div>
+      <h1>We’re making things <span class="accent">worth saying.</span></h1>
+      <div class="divider">♥</div>
+      <p>Expressive pieces, thoughtful gifts, and a little personality in every collection. The shop isn’t open just yet, but this is where everything will live when launch day arrives.</p>
+      <span class="coming">Shop opening soon</span>
+    </section>
+    <section class="section">
+      <div class="section-title">
+        <h2>What’s coming to the shop</h2>
+        <p>We’re building the collection carefully. Here’s a first look at the kinds of pieces you’ll be able to shop.</p>
+      </div>
+      <div class="grid">
+        <article class="card"><span class="badge">Coming Soon</span><div class="card-content"><h3>Apparel</h3><p>Graphic tees and wearable statements made for the things you actually want to say.</p></div></article>
+        <article class="card"><span class="badge">Coming Soon</span><div class="card-content"><h3>Candles</h3><p>Giftable, display-worthy candles with personality built right into the label.</p></div></article>
+        <article class="card"><span class="badge">Coming Soon</span><div class="card-content"><h3>Mugs</h3><p>Morning coffee, afternoon tea, and a little attitude before either one is finished.</p></div></article>
+        <article class="card"><span class="badge">Coming Soon</span><div class="card-content"><h3>Bags + Extras</h3><p>Totes and everyday extras designed to carry more than just your stuff.</p></div></article>
+        <article class="card"><span class="badge">Coming Soon</span><div class="card-content"><h3>Gifts</h3><p>Things worth giving when a basic gift just won’t do.</p></div></article>
+        <article class="card"><span class="badge">Coming Soon</span><div class="card-content"><h3>Home + More</h3><p>Small pieces for home, desk, and everyday life that still feel unmistakably Made to Say It.</p></div></article>
+      </div>
+      <div class="note">No checkout yet — just a polished preview while the first collections are being created.</div>
+    </section>
+  </main>
+  <footer>
+    <div class="brand">Made to Say It</div>
+    <p>Things Worth Saying. Things Worth Giving.</p>
+  </footer>
+</body>
+</html>
