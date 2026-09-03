@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Made to Say It is coming soon — be the first to know when the first collections launch.">
+<title>Coming Soon | Made to Say It</title>
+<style>
+:root{--cream:#fbf6f1;--paper:#fffaf6;--blush:#cf8575;--blush-soft:#f5e7df;--ink:#111;--muted:#4e4946;--line:#eadbd3}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+a{text-decoration:none;color:inherit} img{display:block;max-width:100%}
+.announcement{height:42px;background:#050505;color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 16px;font-size:14px;letter-spacing:.15em;text-transform:uppercase}
+.announcement .heart{color:var(--blush);margin-left:8px}
+.site-header{background:rgba(255,250,246,.98);border-bottom:1px solid #f0e6e0}
+.nav{min-height:142px;width:min(1440px,96%);margin:0 auto;display:grid;grid-template-columns:220px 1fr auto;align-items:center;gap:32px}
+.logo-wrap{display:flex;align-items:center}.logo-wrap img{width:165px;height:165px;object-fit:contain;margin-top:-8px;margin-bottom:-8px}
+.nav-center{display:flex;justify-content:center;gap:46px;font-size:17px;letter-spacing:.045em;text-transform:uppercase;white-space:nowrap}
+.nav-center a:hover,.nav-center .active{color:var(--blush)}
+.nav-right{display:flex;align-items:center;gap:24px}.loop-btn{min-height:52px;border:1.5px solid var(--blush);color:var(--blush);border-radius:999px;padding:0 24px;display:inline-flex;align-items:center;justify-content:center;font-weight:700;letter-spacing:.04em;white-space:nowrap}
+.utility{display:flex;gap:18px;align-items:center}.utility svg{width:25px;height:25px;stroke:#111;stroke-width:1.7;fill:none}
+.hero{min-height:610px;display:flex;align-items:center;justify-content:center;text-align:center;padding:76px 24px;background:linear-gradient(145deg,var(--paper) 0%,#f9eee8 55%,#efc9bc 100%)}
+.hero-inner{max-width:900px}.kicker{color:var(--blush);text-transform:uppercase;letter-spacing:.12em;font-size:18px;font-weight:700;margin-bottom:16px}
+.divider{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--blush);margin:0 auto 22px}.divider:before,.divider:after{content:"";height:1px;width:72px;background:#d9a395}
+h1{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:clamp(54px,6vw,92px);line-height:.98;letter-spacing:-.035em;margin:0 0 24px}
+h1 .accent{color:var(--blush)}.hero p{max-width:700px;margin:0 auto;color:#4f4642;font-size:19px;line-height:1.65}
+.preview{width:min(1160px,92%);margin:78px auto}.section-head{text-align:center;margin-bottom:38px}.section-head h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(38px,4vw,58px);font-weight:400;margin:0 0 12px}.section-head p{color:var(--muted);line-height:1.65;margin:0 auto;max-width:680px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{min-height:260px;border:1px solid var(--line);background:var(--paper);padding:28px;display:flex;flex-direction:column;justify-content:space-between}.card small{color:var(--blush);font-weight:700;letter-spacing:.14em}.card h3{font-family:Georgia,"Times New Roman",serif;font-size:30px;font-weight:400;line-height:1.08;margin:16px 0 10px}.card p{color:#6f6560;line-height:1.55;margin:0}.tag{margin-top:26px;font-size:11px;text-transform:uppercase;letter-spacing:.13em;color:#8b5147}
+.signup{width:min(1000px,92%);margin:0 auto 80px;background:#111;color:#fff;border-radius:28px;padding:62px 34px;text-align:center}.signup h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(40px,5vw,66px);font-weight:400;margin:0 0 15px}.signup p{max-width:650px;margin:0 auto 28px;color:#ddd6d2;line-height:1.65}
+.form-preview{display:flex;gap:10px;max-width:650px;margin:0 auto}.form-preview input{flex:1;min-height:54px;border:1px solid #ddd;border-radius:7px;padding:0 18px;font-size:15px}.form-preview button{min-height:54px;padding:0 24px;border:0;border-radius:7px;background:var(--blush);color:#fff;font-weight:700;text-transform:uppercase;letter-spacing:.07em}.form-note{font-size:12px;color:#aaa;margin-top:14px}
+footer{width:min(1160px,92%);margin:0 auto;padding:34px 0 46px;display:flex;justify-content:space-between;color:#736862;font-size:14px}
+@media(max-width:1050px){.nav{grid-template-columns:170px 1fr auto;gap:18px}.logo-wrap img{width:140px;height:140px}.nav-center{gap:22px;font-size:14px}.utility{display:none}.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){.announcement{min-height:40px;height:auto;font-size:10px;line-height:1.4;padding:8px 12px}.nav{min-height:90px;grid-template-columns:110px 1fr;width:94%}.logo-wrap img{width:104px;height:104px}.nav-center{display:none}.nav-right{justify-content:flex-end}.loop-btn{min-height:42px;padding:0 14px;font-size:12px}.hero{min-height:520px;padding:55px 24px}h1{font-size:54px}.grid{grid-template-columns:1fr}.form-preview{flex-direction:column}.signup{padding:48px 24px}footer{flex-direction:column;gap:8px}}
+</style>
+</head>
+<body>
+<div class="announcement">Coming Soon &nbsp;•&nbsp; Things Worth Saying &nbsp;•&nbsp; Things Worth Giving <span class="heart">♥</span></div>
+<header class="site-header"><nav class="nav">
+<a class="logo-wrap" href="index.html" aria-label="Made to Say It home"><img src="made-to-say-it-logo.png" alt="Made to Say It"></a>
+<div class="nav-center"><a href="shop.html">Shop⌄</a><a href="collections.html">Collections⌄</a><a href="our-story.html">Our Story</a><a class="active" href="coming-soon.html">Coming Soon</a></div>
+<div class="nav-right"><a class="loop-btn" href="#signup">Stay in the loop ♥</a><div class="utility" aria-hidden="true">
+<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="M16 16l5 5"></path></svg>
+<svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"></circle><path d="M5 22v-3a7 7 0 0 1 14 0v3"></path></svg>
+<svg viewBox="0 0 24 24"><path d="M5 8h14l1 13H4L5 8z"></path><path d="M9 8V5a3 3 0 0 1 6 0v3"></path></svg></div></div>
+</nav></header>
+<main>
+<section class="hero"><div class="hero-inner"><div class="kicker">Coming Soon</div><div class="divider">♥</div>
+<h1>Something <span class="accent">worth waiting for.</span></h1>
+<p>Made to Say It is getting ready to launch with expressive pieces, thoughtful gifts, cultural favorites, and just enough attitude. The first collections are taking shape now.</p>
+</div></section>
+<section class="preview"><div class="section-head"><h2>A little preview of what’s coming</h2><p>The first drops will bring together some of the personalities that make Made to Say It, Made to Say It.</p></div>
+<div class="grid">
+<article class="card"><div><small>01</small><h3>Properly Unhinged</h3><p>Dry humor, bold sayings, and the things everyone was thinking anyway.</p></div><div class="tag">Coming Soon</div></article>
+<article class="card"><div><small>02</small><h3>Say It in Spanish</h3><p>Expressions, sayings, and personality that sometimes just sound better en español.</p></div><div class="tag">Coming Soon</div></article>
+<article class="card"><div><small>03</small><h3>Colombian Collection</h3><p>Familiar phrases, culture, humor, and pieces made with Colombian personality.</p></div><div class="tag">Coming Soon</div></article>
+<article class="card"><div><small>04</small><h3>Seasonal</h3><p>Limited drops for Halloween, holidays, celebrations, and moments worth saying something about.</p></div><div class="tag">Coming Soon</div></article>
+</div></section>
+<section class="signup" id="signup"><div class="kicker">Stay in the Loop</div><h2>Be the first to know.</h2>
+<p>Join the list for launch news, new collections, and the occasional thing that was simply too good not to make.</p>
+<form class="form-preview" onsubmit="event.preventDefault(); alert('Email signup will be activated before launch.');"><input type="email" placeholder="Enter your email address" aria-label="Email address" required><button type="submit">Keep Me Posted</button></form>
+<div class="form-note">Preview signup for now — we’ll connect this to your mailing list before launch.</div></section>
+</main>
+<footer><div>© 2026 Made to Say It. All rights reserved.</div><div>Things worth saying • Things worth giving</div></footer>
+</body></html>
