@@ -31,34 +31,69 @@ h1 .accent{color:var(--blush)}.hero p{max-width:700px;margin:0 auto;color:#4f464
 footer{width:min(1160px,92%);margin:0 auto;padding:34px 0 46px;display:flex;justify-content:space-between;color:#736862;font-size:14px}
 @media(max-width:1050px){.nav{grid-template-columns:170px 1fr auto;gap:18px}.logo-wrap img{width:140px;height:140px}.nav-center{gap:22px;font-size:14px}.utility{display:none}.grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:760px){.announcement{min-height:40px;height:auto;font-size:10px;line-height:1.4;padding:8px 12px}.nav{min-height:90px;grid-template-columns:110px 1fr;width:94%}.logo-wrap img{width:104px;height:104px}.nav-center{display:none}.nav-right{justify-content:flex-end}.loop-btn{min-height:42px;padding:0 14px;font-size:12px}.hero{min-height:520px;padding:55px 24px}h1{font-size:54px}.grid{grid-template-columns:1fr}.form-preview{flex-direction:column}.signup{padding:48px 24px}footer{flex-direction:column;gap:8px}}
+
+/* LANGUAGE SWITCH */
+.lang-switch{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;letter-spacing:.06em;white-space:nowrap}
+.lang-switch button{appearance:none;border:0;background:transparent;padding:4px 2px;cursor:pointer;font:inherit;color:#8a7d76}
+.lang-switch button.active{color:#cf8575}
+.lang-switch .sep{color:#c8b8b0}
+
 </style>
 </head>
 <body>
-<div class="announcement">Coming Soon &nbsp;•&nbsp; Things Worth Saying &nbsp;•&nbsp; Things Worth Giving <span class="heart">♥</span></div>
+<div class="announcement"><span data-i18n="announce">Coming Soon • Things Worth Saying • Things Worth Giving</span> <span class="heart">♥</span></div>
 <header class="site-header"><nav class="nav">
 <a class="logo-wrap" href="index.html" aria-label="Made to Say It home"><img src="made-to-say-it-logo.png" alt="Made to Say It"></a>
-<div class="nav-center"><a href="shop.html">Shop⌄</a><a href="collections.html">Collections⌄</a><a href="our-story.html">Our Story</a><a class="active" href="coming-soon.html">Coming Soon</a></div>
-<div class="nav-right"><a class="loop-btn" href="#signup">Stay in the loop ♥</a><div class="utility" aria-hidden="true">
+<div class="nav-center"><a href="shop.html"><span data-i18n="navShop">Shop⌄</span></a><a href="collections.html"><span data-i18n="navCollections">Collections⌄</span></a><a href="our-story.html"><span data-i18n="navStory">Our Story</span></a><a class="active" href="coming-soon.html"><span data-i18n="navComing">Coming Soon</span></a></div>
+<div class="nav-right"><div class="lang-switch" aria-label="Language">
+      <button type="button" id="lang-en" class="active" onclick="setLanguage('en')">EN</button>
+      <span class="sep">|</span>
+      <button type="button" id="lang-es" onclick="setLanguage('es')">ES</button>
+    </div><a class="loop-btn" href="#signup"><span data-i18n="loop">Stay in the loop ♥</span></a><div class="utility" aria-hidden="true">
 <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="M16 16l5 5"></path></svg>
 <svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"></circle><path d="M5 22v-3a7 7 0 0 1 14 0v3"></path></svg>
 <svg viewBox="0 0 24 24"><path d="M5 8h14l1 13H4L5 8z"></path><path d="M9 8V5a3 3 0 0 1 6 0v3"></path></svg></div></div>
 </nav></header>
 <main>
-<section class="hero"><div class="hero-inner"><div class="kicker">Coming Soon</div><div class="divider">♥</div>
-<h1>Something <span class="accent">worth waiting for.</span></h1>
-<p>Made to Say It is getting ready to launch with expressive pieces, thoughtful gifts, cultural favorites, and just enough attitude. The first collections are taking shape now.</p>
+<section class="hero"><div class="hero-inner"><div class="kicker" data-i18n="kicker">Coming Soon</div><div class="divider">♥</div>
+<h1 data-i18n="heroTitle">Something <span class="accent">worth waiting for.</span></h1>
+<p data-i18n="heroP">Made to Say It is getting ready to launch with expressive pieces, thoughtful gifts, cultural favorites, and just enough attitude. The first collections are taking shape now.</p>
 </div></section>
-<section class="preview"><div class="section-head"><h2>A little preview of what’s coming</h2><p>The first drops will bring together some of the personalities that make Made to Say It, Made to Say It.</p></div>
+<section class="preview"><div class="section-head"><h2 data-i18n="previewTitle">A little preview of what’s coming</h2><p data-i18n="previewP">The first drops will bring together some of the personalities that make Made to Say It, Made to Say It.</p></div>
 <div class="grid">
-<article class="card"><div><small>01</small><h3>Properly Unhinged</h3><p>Dry humor, bold sayings, and the things everyone was thinking anyway.</p></div><div class="tag">Coming Soon</div></article>
-<article class="card"><div><small>02</small><h3>Say It in Spanish</h3><p>Expressions, sayings, and personality that sometimes just sound better en español.</p></div><div class="tag">Coming Soon</div></article>
-<article class="card"><div><small>03</small><h3>Colombian Collection</h3><p>Familiar phrases, culture, humor, and pieces made with Colombian personality.</p></div><div class="tag">Coming Soon</div></article>
-<article class="card"><div><small>04</small><h3>Seasonal</h3><p>Limited drops for Halloween, holidays, celebrations, and moments worth saying something about.</p></div><div class="tag">Coming Soon</div></article>
+<article class="card"><div><small>01</small><h3>Properly Unhinged</h3><p data-i18n="c1P">Dry humor, bold sayings, and the things everyone was thinking anyway.</p></div><div class="tag" data-i18n="badge">Coming Soon</div></article>
+<article class="card"><div><small>02</small><h3 data-i18n="c2T">Say It in Spanish</h3><p data-i18n="c2P">Expressions, sayings, and personality that sometimes just sound better en español.</p></div><div class="tag" data-i18n="badge">Coming Soon</div></article>
+<article class="card"><div><small>03</small><h3 data-i18n="c3T">Colombian Collection</h3><p data-i18n="c3P">Familiar phrases, culture, humor, and pieces made with Colombian personality.</p></div><div class="tag" data-i18n="badge">Coming Soon</div></article>
+<article class="card"><div><small>04</small><h3 data-i18n="c4T">Seasonal</h3><p data-i18n="c4P">Limited drops for Halloween, holidays, celebrations, and moments worth saying something about.</p></div><div class="tag" data-i18n="badge">Coming Soon</div></article>
 </div></section>
-<section class="signup" id="signup"><div class="kicker">Stay in the Loop</div><h2>Be the first to know.</h2>
-<p>Join the list for launch news, new collections, and the occasional thing that was simply too good not to make.</p>
-<form class="form-preview" onsubmit="event.preventDefault(); alert('Email signup will be activated before launch.');"><input type="email" placeholder="Enter your email address" aria-label="Email address" required><button type="submit">Keep Me Posted</button></form>
-<div class="form-note">Preview signup for now — we’ll connect this to your mailing list before launch.</div></section>
+<section class="signup" id="signup"><div class="kicker" data-i18n="signupK">Stay in the Loop</div><h2 data-i18n="signupTitle">Be the first to know.</h2>
+<p data-i18n="signupP">Join the list for launch news, new collections, and the occasional thing that was simply too good not to make.</p>
+<form class="form-preview" onsubmit="event.preventDefault(); alert('Email signup will be activated before launch.');"><input type="email" placeholder="Enter your email address" data-i18n-placeholder="emailPlaceholder" aria-label="Email address" required><button type="submit" data-i18n="button">Keep Me Posted</button></form>
+<div class="form-note" data-i18n="formNote">Preview signup for now — we’ll connect this to your mailing list before launch.</div></section>
 </main>
-<footer><div>© 2026 Made to Say It. All rights reserved.</div><div>Things worth saying • Things worth giving</div></footer>
+<footer><div data-i18n="copyright">© 2026 Made to Say It. All rights reserved.</div><div data-i18n="tagline">Things worth saying • Things worth giving</div></footer>
+
+<script>
+const copy = {
+  en: {"announce": "Coming Soon • Things Worth Saying • Things Worth Giving", "navShop": "Shop⌄", "navCollections": "Collections⌄", "navStory": "Our Story", "navComing": "Coming Soon", "loop": "Stay in the loop ♥", "kicker": "Coming Soon", "heroTitle": "Something <span class=\"accent\">worth waiting for.</span>", "heroP": "Made to Say It is getting ready to launch with expressive pieces, thoughtful gifts, cultural favorites, and just enough attitude. The first collections are taking shape now.", "previewTitle": "A little preview of what’s coming", "previewP": "The first drops will bring together some of the personalities that make Made to Say It, Made to Say It.", "badge": "Coming Soon", "c1P": "Dry humor, bold sayings, and the things everyone was thinking anyway.", "c2T": "Say It in Spanish", "c2P": "Expressions, sayings, and personality that sometimes just sound better en español.", "c3T": "Colombian Collection", "c3P": "Familiar phrases, culture, humor, and pieces made with Colombian personality.", "c4T": "Seasonal", "c4P": "Limited drops for Halloween, holidays, celebrations, and moments worth saying something about.", "signupK": "Stay in the Loop", "signupTitle": "Be the first to know.", "signupP": "Join the list for launch news, new collections, and the occasional thing that was simply too good not to make.", "emailPlaceholder": "Enter your email address", "button": "Keep Me Posted", "formNote": "Preview signup for now — we’ll connect this to your mailing list before launch.", "copyright": "© 2026 Made to Say It. All rights reserved.", "tagline": "Things worth saying • Things worth giving"},
+  es: {"announce": "Próximamente • Cosas que vale la pena decir • Cosas que vale la pena regalar", "navShop": "Tienda⌄", "navCollections": "Colecciones⌄", "navStory": "Nuestra Historia", "navComing": "Próximamente", "loop": "Mantente al tanto ♥", "kicker": "Próximamente", "heroTitle": "Algo que <span class=\"accent\">vale la pena esperar.</span>", "heroP": "Made to Say It se está preparando para lanzar piezas expresivas, regalos pensados con intención, favoritos culturales y la dosis justa de actitud. Las primeras colecciones ya están tomando forma.", "previewTitle": "Un pequeño adelanto de lo que viene", "previewP": "Los primeros lanzamientos reunirán algunas de las personalidades que hacen que Made to Say It sea Made to Say It.", "badge": "Próximamente", "c1P": "Humor seco, frases atrevidas y esas cosas que todos estaban pensando de todos modos.", "c2T": "Dilo en Español", "c2P": "Expresiones, dichos y personalidad que a veces simplemente suenan mejor en español.", "c3T": "Colección Colombiana", "c3P": "Frases conocidas, cultura, humor y piezas hechas con personalidad colombiana.", "c4T": "Temporada", "c4P": "Lanzamientos limitados para Halloween, fiestas, celebraciones y momentos que merecen decir algo.", "signupK": "Mantente al Tanto", "signupTitle": "Sé de los primeros en enterarte.", "signupP": "Únete a la lista para recibir noticias del lanzamiento, nuevas colecciones y alguna que otra idea que simplemente era demasiado buena para no hacerla.", "emailPlaceholder": "Ingresa tu correo electrónico", "button": "Mantenme al Tanto", "formNote": "Por ahora este formulario es solo una vista previa — lo conectaremos a la lista de correo antes del lanzamiento.", "copyright": "© 2026 Made to Say It. Todos los derechos reservados.", "tagline": "Cosas que vale la pena decir • Cosas que vale la pena regalar"}
+};
+function setLanguage(lang){
+  const t = copy[lang] || copy.en;
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.dataset.i18n;
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+    const key = el.dataset.i18nPlaceholder;
+    if (t[key] !== undefined) el.setAttribute("placeholder", t[key]);
+  });
+  document.documentElement.lang = lang;
+  document.getElementById("lang-en").classList.toggle("active", lang === "en");
+  document.getElementById("lang-es").classList.toggle("active", lang === "es");
+  localStorage.setItem("mtsi-language", lang);
+}
+document.addEventListener("DOMContentLoaded", () => setLanguage(localStorage.getItem("mtsi-language") || "en"));
+</script>
+
 </body></html>

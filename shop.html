@@ -64,22 +64,34 @@
       .section{padding-top:54px}
       .card{min-height:250px}
     }
-  </style>
+  
+/* LANGUAGE SWITCH */
+.lang-switch{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;letter-spacing:.06em;white-space:nowrap}
+.lang-switch button{appearance:none;border:0;background:transparent;padding:4px 2px;cursor:pointer;font:inherit;color:#8a7d76}
+.lang-switch button.active{color:#cf8575}
+.lang-switch .sep{color:#c8b8b0}
+
+</style>
 </head>
 <body>
-  <div class="announcement">COMING SOON • THINGS WORTH SAYING • THINGS WORTH GIVING ♥</div>
+  <div class="announcement"><span data-i18n="announce">COMING SOON • THINGS WORTH SAYING • THINGS WORTH GIVING ♥</span></div>
   <header class="nav">
     <a class="logo" href="index.html" aria-label="Made to Say It home">
       <img src="made-to-say-it-logo.png" alt="Made to Say It logo" />
     </a>
     <nav class="menu" aria-label="Main navigation">
-      <a href="shop.html">Shop</a>
-      <a href="collections.html">Collections</a>
-      <a href="our-story.html">Our Story</a>
-      <a href="coming-soon.html">Coming Soon</a>
+      <a href="shop.html"><span data-i18n="navShop">Shop</span></a>
+      <a href="collections.html"><span data-i18n="navCollections">Collections</span></a>
+      <a href="our-story.html"><span data-i18n="navStory">Our Story</span></a>
+      <a href="coming-soon.html"><span data-i18n="navComing">Coming Soon</span></a>
     </nav>
     <div class="nav-actions">
-      <a class="loop" href="coming-soon.html">Stay in the loop ♥</a>
+    <div class="lang-switch" aria-label="Language">
+      <button type="button" id="lang-en" class="active" onclick="setLanguage('en')">EN</button>
+      <span class="sep">|</span>
+      <button type="button" id="lang-es" onclick="setLanguage('es')">ES</button>
+    </div>
+      <a class="loop" href="coming-soon.html#signup"><span data-i18n="loop">Stay in the loop ♥</span></a>
       <span aria-hidden="true">⌕</span>
       <span aria-hidden="true">♙</span>
       <span aria-hidden="true">▢</span>
@@ -88,30 +100,54 @@
   <main>
     <section class="hero">
       <div class="eyebrow">Made to Say It</div>
-      <h1>We’re making things <span class="accent">worth saying.</span></h1>
+      <h1 data-i18n="heroTitle">We’re making things <span class="accent">worth saying.</span></h1>
       <div class="divider">♥</div>
-      <p>Expressive pieces, thoughtful gifts, and a little personality in every collection. The shop isn’t open just yet, but this is where everything will live when launch day arrives.</p>
-      <span class="coming">Shop opening soon</span>
+      <p data-i18n="heroP">Expressive pieces, thoughtful gifts, and a little personality in every collection. The shop isn’t open just yet, but this is where everything will live when launch day arrives.</p>
+      <span class="coming" data-i18n="opening">Shop opening soon</span>
     </section>
     <section class="section">
       <div class="section-title">
-        <h2>What’s coming to the shop</h2>
-        <p>We’re building the collection carefully. Here’s a first look at the kinds of pieces you’ll be able to shop.</p>
+        <h2 data-i18n="sectionTitle">What’s coming to the shop</h2>
+        <p data-i18n="sectionP">We’re building the collection carefully. Here’s a first look at the kinds of pieces you’ll be able to shop.</p>
       </div>
       <div class="grid">
-        <article class="card"><span class="badge">Coming Soon</span><div class="card-content"><h3>Apparel</h3><p>Graphic tees and wearable statements made for the things you actually want to say.</p></div></article>
-        <article class="card"><span class="badge">Coming Soon</span><div class="card-content"><h3>Candles</h3><p>Giftable, display-worthy candles with personality built right into the label.</p></div></article>
-        <article class="card"><span class="badge">Coming Soon</span><div class="card-content"><h3>Mugs</h3><p>Morning coffee, afternoon tea, and a little attitude before either one is finished.</p></div></article>
-        <article class="card"><span class="badge">Coming Soon</span><div class="card-content"><h3>Bags + Extras</h3><p>Totes and everyday extras designed to carry more than just your stuff.</p></div></article>
-        <article class="card"><span class="badge">Coming Soon</span><div class="card-content"><h3>Gifts</h3><p>Things worth giving when a basic gift just won’t do.</p></div></article>
-        <article class="card"><span class="badge">Coming Soon</span><div class="card-content"><h3>Home + More</h3><p>Small pieces for home, desk, and everyday life that still feel unmistakably Made to Say It.</p></div></article>
+        <article class="card"><span class="badge" data-i18n="badge">Coming Soon</span><div class="card-content"><h3 data-i18n="card1Title">Apparel</h3><p data-i18n="card1P">Graphic tees and wearable statements made for the things you actually want to say.</p></div></article>
+        <article class="card"><span class="badge" data-i18n="badge">Coming Soon</span><div class="card-content"><h3 data-i18n="card2Title">Candles</h3><p data-i18n="card2P">Giftable, display-worthy candles with personality built right into the label.</p></div></article>
+        <article class="card"><span class="badge" data-i18n="badge">Coming Soon</span><div class="card-content"><h3 data-i18n="card3Title">Mugs</h3><p data-i18n="card3P">Morning coffee, afternoon tea, and a little attitude before either one is finished.</p></div></article>
+        <article class="card"><span class="badge" data-i18n="badge">Coming Soon</span><div class="card-content"><h3 data-i18n="card4Title">Bags + Extras</h3><p data-i18n="card4P">Totes and everyday extras designed to carry more than just your stuff.</p></div></article>
+        <article class="card"><span class="badge" data-i18n="badge">Coming Soon</span><div class="card-content"><h3 data-i18n="card5Title">Gifts</h3><p data-i18n="card5P">Things worth giving when a basic gift just won’t do.</p></div></article>
+        <article class="card"><span class="badge" data-i18n="badge">Coming Soon</span><div class="card-content"><h3 data-i18n="card6Title">Home + More</h3><p data-i18n="card6P">Small pieces for home, desk, and everyday life that still feel unmistakably Made to Say It.</p></div></article>
       </div>
-      <div class="note">No checkout yet — just a polished preview while the first collections are being created.</div>
+      <div class="note" data-i18n="note">No checkout yet — just a polished preview while the first collections are being created.</div>
     </section>
   </main>
   <footer>
     <div class="brand">Made to Say It</div>
-    <p>Things Worth Saying. Things Worth Giving.</p>
+    <p data-i18n="tagline">Things Worth Saying. Things Worth Giving.</p>
   </footer>
+
+<script>
+const copy = {
+  en: {"announce": "COMING SOON • THINGS WORTH SAYING • THINGS WORTH GIVING ♥", "navShop": "Shop", "navCollections": "Collections", "navStory": "Our Story", "navComing": "Coming Soon", "loop": "Stay in the loop ♥", "heroTitle": "We’re making things <span class=\"accent\">worth saying.</span>", "heroP": "Expressive pieces, thoughtful gifts, and a little personality in every collection. The shop isn’t open just yet, but this is where everything will live when launch day arrives.", "opening": "Shop opening soon", "sectionTitle": "What’s coming to the shop", "sectionP": "We’re building the collection carefully. Here’s a first look at the kinds of pieces you’ll be able to shop.", "badge": "Coming Soon", "card1Title": "Apparel", "card1P": "Graphic tees and wearable statements made for the things you actually want to say.", "card2Title": "Candles", "card2P": "Giftable, display-worthy candles with personality built right into the label.", "card3Title": "Mugs", "card3P": "Morning coffee, afternoon tea, and a little attitude before either one is finished.", "card4Title": "Bags + Extras", "card4P": "Totes and everyday extras designed to carry more than just your stuff.", "card5Title": "Gifts", "card5P": "Things worth giving when a basic gift just won’t do.", "card6Title": "Home + More", "card6P": "Small pieces for home, desk, and everyday life that still feel unmistakably Made to Say It.", "note": "No checkout yet — just a polished preview while the first collections are being created.", "tagline": "Things Worth Saying. Things Worth Giving."},
+  es: {"announce": "PRÓXIMAMENTE • COSAS QUE VALE LA PENA DECIR • COSAS QUE VALE LA PENA REGALAR ♥", "navShop": "Tienda", "navCollections": "Colecciones", "navStory": "Nuestra Historia", "navComing": "Próximamente", "loop": "Mantente al tanto ♥", "heroTitle": "Estamos creando cosas que <span class=\"accent\">vale la pena decir.</span>", "heroP": "Piezas con personalidad, regalos pensados con intención y un toque especial en cada colección. La tienda todavía no está abierta, pero aquí encontrarás todo cuando llegue el día del lanzamiento.", "opening": "Tienda próximamente", "sectionTitle": "Lo que llegará a la tienda", "sectionP": "Estamos creando la colección con cuidado. Aquí tienes un primer vistazo a los tipos de productos que podrás encontrar.", "badge": "Próximamente", "card1Title": "Ropa", "card1P": "Camisetas gráficas y prendas con mensajes hechas para decir lo que de verdad quieres decir.", "card2Title": "Velas", "card2P": "Velas perfectas para regalar y exhibir, con personalidad desde la etiqueta.", "card3Title": "Tazas", "card3P": "Café por la mañana, té por la tarde y un poquito de actitud antes de terminar cualquiera de los dos.", "card4Title": "Bolsos + Extras", "card4P": "Totes y accesorios para el día a día diseñados para llevar mucho más que tus cosas.", "card5Title": "Regalos", "card5P": "Cosas que vale la pena regalar cuando un regalo básico simplemente no basta.", "card6Title": "Hogar + Más", "card6P": "Pequeños detalles para el hogar, el escritorio y la vida diaria que siguen sintiéndose inconfundiblemente Made to Say It.", "note": "Todavía no hay proceso de compra — por ahora, esta es una vista previa mientras creamos las primeras colecciones.", "tagline": "Cosas que vale la pena decir. Cosas que vale la pena regalar."}
+};
+function setLanguage(lang){
+  const t = copy[lang] || copy.en;
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.dataset.i18n;
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+    const key = el.dataset.i18nPlaceholder;
+    if (t[key] !== undefined) el.setAttribute("placeholder", t[key]);
+  });
+  document.documentElement.lang = lang;
+  document.getElementById("lang-en").classList.toggle("active", lang === "en");
+  document.getElementById("lang-es").classList.toggle("active", lang === "es");
+  localStorage.setItem("mtsi-language", lang);
+}
+document.addEventListener("DOMContentLoaded", () => setLanguage(localStorage.getItem("mtsi-language") || "en"));
+</script>
+
 </body>
 </html>

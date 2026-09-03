@@ -41,9 +41,9 @@
     .story-copy .lead{font-size:19px;color:var(--ink)}
     .quote-card{background:var(--paper);border:1px solid var(--line);padding:42px;position:sticky;top:24px}
     .quote-mark{font-family:Georgia,'Times New Roman',serif;font-size:72px;line-height:.7;color:var(--blush);margin-bottom:16px}
-    .quote-mark-end{font-family:Georgia,'Times New Roman',serif;font-size:72px;line-height:.7;color:var(--blush);text-align:right;margin-top:18px}
     .quote-card blockquote{margin:0;font-family:Georgia,'Times New Roman',serif;font-size:34px;line-height:1.2;font-weight:400}
     .quote-card p{margin:22px 0 0;color:#8b5147;font-size:13px;letter-spacing:1.7px;text-transform:uppercase}
+    .quote-end{position:absolute;right:34px;bottom:24px;font-family:Georgia,'Times New Roman',serif;font-size:72px;line-height:.7;color:var(--blush)}
 
     .values{margin-top:76px;border-top:1px solid var(--line);padding-top:60px}
     .values-head{text-align:center;margin-bottom:40px}
@@ -83,10 +83,17 @@
       .story-copy h2,.values-head h2,.closing h2{font-size:36px}
       .quote-card blockquote{font-size:28px}
     }
-  </style>
+  
+/* LANGUAGE SWITCH */
+.lang-switch{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;letter-spacing:.06em;white-space:nowrap}
+.lang-switch button{appearance:none;border:0;background:transparent;padding:4px 2px;cursor:pointer;font:inherit;color:#8a7d76}
+.lang-switch button.active{color:#cf8575}
+.lang-switch .sep{color:#c8b8b0}
+
+</style>
 </head>
 <body>
-  <div class="announcement">COMING SOON • THINGS WORTH SAYING • THINGS WORTH GIVING ♥</div>
+  <div class="announcement"><span data-i18n="announce">COMING SOON • THINGS WORTH SAYING • THINGS WORTH GIVING ♥</span></div>
 
   <header class="nav">
     <a class="logo" href="index.html" aria-label="Made to Say It home">
@@ -94,14 +101,19 @@
     </a>
 
     <nav class="menu" aria-label="Main navigation">
-      <a href="shop.html">Shop</a>
-      <a href="collections.html">Collections</a>
-      <a class="active" href="our-story.html">Our Story</a>
-      <a href="coming-soon.html">Coming Soon</a>
+      <a href="shop.html"><span data-i18n="navShop">Shop</span></a>
+      <a href="collections.html"><span data-i18n="navCollections">Collections</span></a>
+      <a class="active" href="our-story.html"><span data-i18n="navStory">Our Story</span></a>
+      <a href="coming-soon.html"><span data-i18n="navComing">Coming Soon</span></a>
     </nav>
 
     <div class="nav-actions">
-      <a class="loop" href="coming-soon.html">Stay in the loop ♥</a>
+    <div class="lang-switch" aria-label="Language">
+      <button type="button" id="lang-en" class="active" onclick="setLanguage('en')">EN</button>
+      <span class="sep">|</span>
+      <button type="button" id="lang-es" onclick="setLanguage('es')">ES</button>
+    </div>
+      <a class="loop" href="coming-soon.html#signup"><span data-i18n="loop">Stay in the loop ♥</span></a>
       <span aria-hidden="true">⌕</span>
       <span aria-hidden="true">♙</span>
       <span aria-hidden="true">▢</span>
@@ -110,69 +122,93 @@
 
   <main>
     <section class="hero">
-      <div class="eyebrow">Our Story</div>
-      <h1>Made for the things you <span class="accent">mean to say.</span></h1>
+      <div class="eyebrow" data-i18n="eyebrow">Our Story</div>
+      <h1 data-i18n="heroTitle">Made for the things you <span class="accent">mean to say.</span></h1>
       <div class="divider">♥</div>
-      <p>Made to Say It was created around one simple idea: the right words can make a gift better, a shirt funnier, a moment more memorable, and a little piece of everyday life feel more personal.</p>
+      <p data-i18n="heroP">Made to Say It was created around one simple idea: the right words can make a gift better, a shirt funnier, a moment more memorable, and a little piece of everyday life feel more personal.</p>
     </section>
 
     <section class="story-wrap">
       <div class="story-grid">
         <div class="story-copy">
-          <h2>Not everything needs to be serious. But it should feel like you.</h2>
-          <p class="lead">Made to Say It is about expressive pieces with personality — the kind of things you see and immediately think, “That’s so me,” or “I know exactly who needs this.”</p>
-          <p>We’re building a brand that can move between funny, thoughtful, cultural, seasonal, and just a little unexpected. That means a graphic tee can sit beside a candle, a mug, a tote, or a gift and still feel like it belongs in the same world.</p>
-          <p>The common thread is the voice: clever without trying too hard, polished without being stuffy, and personal enough to feel worth keeping or giving.</p>
-          <p>Some collections will be playful. Some will be bilingual. Some will celebrate Colombian culture and familiar expressions. Others will exist simply because a phrase was too good not to put on something.</p>
-          <p>That’s what Made to Say It is here for — giving good words somewhere to live.</p>
+          <h2 data-i18n="storyTitle">Not everything needs to be serious. But it should feel like you.</h2>
+          <p class="lead" data-i18n="p1">Made to Say It is about expressive pieces with personality — the kind of things you see and immediately think, “That’s so me,” or “I know exactly who needs this.”</p>
+          <p data-i18n="p2">We’re building a brand that can move between funny, thoughtful, cultural, seasonal, and just a little unexpected. That means a graphic tee can sit beside a candle, a mug, a tote, or a gift and still feel like it belongs in the same world.</p>
+          <p data-i18n="p3">The common thread is the voice: clever without trying too hard, polished without being stuffy, and personal enough to feel worth keeping or giving.</p>
+          <p data-i18n="p4">Some collections will be playful. Some will be bilingual. Some will celebrate Colombian culture and familiar expressions. Others will exist simply because a phrase was too good not to put on something.</p>
+          <p data-i18n="p5">That’s what Made to Say It is here for — giving good words somewhere to live.</p>
         </div>
 
         <aside class="quote-card">
           <div class="quote-mark">“</div>
-          <blockquote>Things worth saying. Things worth giving.</blockquote>
+          <blockquote data-i18n="quote">Things worth saying. Things worth giving.</blockquote>
           <p>Made to Say It</p>
-          <div class="quote-mark-end">”</div>
+          <div class="quote-end">”</div>
         </aside>
       </div>
 
       <section class="values">
         <div class="values-head">
-          <h2>What the brand stands for</h2>
-          <p>As the shop grows, these are the ideas that will keep every collection feeling like Made to Say It.</p>
+          <h2 data-i18n="valuesTitle">What the brand stands for</h2>
+          <p data-i18n="valuesP">As the shop grows, these are the ideas that will keep every collection feeling like Made to Say It.</p>
         </div>
 
         <div class="values-grid">
           <article class="value">
-            <div class="num">01 • Personality</div>
-            <h3>Say something.</h3>
-            <p>Every piece should have a point of view — funny, meaningful, familiar, bold, or simply memorable.</p>
+            <div class="num" data-i18n="v1N">01 • Personality</div>
+            <h3 data-i18n="v1T">Say something.</h3>
+            <p data-i18n="v1P">Every piece should have a point of view — funny, meaningful, familiar, bold, or simply memorable.</p>
           </article>
 
           <article class="value">
-            <div class="num">02 • Style</div>
-            <h3>Keep it polished.</h3>
-            <p>Even the cheekiest saying can still look elevated, intentional, and easy to wear, display, or gift.</p>
+            <div class="num" data-i18n="v2N">02 • Style</div>
+            <h3 data-i18n="v2T">Keep it polished.</h3>
+            <p data-i18n="v2P">Even the cheekiest saying can still look elevated, intentional, and easy to wear, display, or gift.</p>
           </article>
 
           <article class="value">
-            <div class="num">03 • Connection</div>
-            <h3>Make it personal.</h3>
-            <p>The best products feel like they were made for a specific person, memory, culture, mood, or inside joke.</p>
+            <div class="num" data-i18n="v3N">03 • Connection</div>
+            <h3 data-i18n="v3T">Make it personal.</h3>
+            <p data-i18n="v3P">The best products feel like they were made for a specific person, memory, culture, mood, or inside joke.</p>
           </article>
         </div>
       </section>
 
       <section class="closing">
-        <h2>We’re just getting started.</h2>
-        <p>The first collections are still being built, but the idea is already clear: create expressive pieces that feel good to keep and even better to give.</p>
-        <a href="collections.html">Explore the Collections</a>
+        <h2 data-i18n="closingTitle">We’re just getting started.</h2>
+        <p data-i18n="closingP">The first collections are still being built, but the idea is already clear: create expressive pieces that feel good to keep and even better to give.</p>
+        <a href="collections.html"><span data-i18n="explore">Explore the Collections</span></a>
       </section>
     </section>
   </main>
 
   <footer>
     <div class="brand">Made to Say It</div>
-    <p>Things Worth Saying. Things Worth Giving.</p>
+    <p data-i18n="tagline">Things Worth Saying. Things Worth Giving.</p>
   </footer>
+
+<script>
+const copy = {
+  en: {"announce": "COMING SOON • THINGS WORTH SAYING • THINGS WORTH GIVING ♥", "navShop": "Shop", "navCollections": "Collections", "navStory": "Our Story", "navComing": "Coming Soon", "loop": "Stay in the loop ♥", "eyebrow": "Our Story", "heroTitle": "Made for the things you <span class=\"accent\">mean to say.</span>", "heroP": "Made to Say It was created around one simple idea: the right words can make a gift better, a shirt funnier, a moment more memorable, and a little piece of everyday life feel more personal.", "storyTitle": "Not everything needs to be serious. But it should feel like you.", "p1": "Made to Say It is about expressive pieces with personality — the kind of things you see and immediately think, “That’s so me,” or “I know exactly who needs this.”", "p2": "We’re building a brand that can move between funny, thoughtful, cultural, seasonal, and just a little unexpected. That means a graphic tee can sit beside a candle, a mug, a tote, or a gift and still feel like it belongs in the same world.", "p3": "The common thread is the voice: clever without trying too hard, polished without being stuffy, and personal enough to feel worth keeping or giving.", "p4": "Some collections will be playful. Some will be bilingual. Some will celebrate Colombian culture and familiar expressions. Others will exist simply because a phrase was too good not to put on something.", "p5": "That’s what Made to Say It is here for — giving good words somewhere to live.", "quote": "Things worth saying. Things worth giving.", "valuesTitle": "What the brand stands for", "valuesP": "As the shop grows, these are the ideas that will keep every collection feeling like Made to Say It.", "v1N": "01 • Personality", "v1T": "Say something.", "v1P": "Every piece should have a point of view — funny, meaningful, familiar, bold, or simply memorable.", "v2N": "02 • Style", "v2T": "Keep it polished.", "v2P": "Even the cheekiest saying can still look elevated, intentional, and easy to wear, display, or gift.", "v3N": "03 • Connection", "v3T": "Make it personal.", "v3P": "The best products feel like they were made for a specific person, memory, culture, mood, or inside joke.", "closingTitle": "We’re just getting started.", "closingP": "The first collections are still being built, but the idea is already clear: create expressive pieces that feel good to keep and even better to give.", "explore": "Explore the Collections", "tagline": "Things Worth Saying. Things Worth Giving."},
+  es: {"announce": "PRÓXIMAMENTE • COSAS QUE VALE LA PENA DECIR • COSAS QUE VALE LA PENA REGALAR ♥", "navShop": "Tienda", "navCollections": "Colecciones", "navStory": "Nuestra Historia", "navComing": "Próximamente", "loop": "Mantente al tanto ♥", "eyebrow": "Nuestra Historia", "heroTitle": "Hecho para las cosas que <span class=\"accent\">de verdad quieres decir.</span>", "heroP": "Made to Say It nació de una idea sencilla: las palabras correctas pueden hacer que un regalo sea mejor, una camiseta más divertida, un momento más memorable y un pequeño detalle cotidiano mucho más personal.", "storyTitle": "No todo tiene que ser serio. Pero sí debería sentirse como tú.", "p1": "Made to Say It trata de piezas expresivas con personalidad — de esas que ves y enseguida piensas: “Eso soy yo” o “Sé exactamente quién necesita esto”.", "p2": "Estamos creando una marca capaz de moverse entre lo divertido, lo pensado, lo cultural, lo de temporada y lo un poquito inesperado. Por eso una camiseta gráfica puede convivir con una vela, una taza, un tote o un regalo y seguir sintiéndose parte del mismo mundo.", "p3": "El hilo que lo une todo es la voz: ingeniosa sin esforzarse demasiado, pulida sin ser rígida y lo bastante personal como para querer conservarla o regalarla.", "p4": "Algunas colecciones serán juguetonas. Otras serán bilingües. Algunas celebrarán la cultura colombiana y expresiones familiares. Y otras existirán simplemente porque una frase era demasiado buena para no ponerla en algo.", "p5": "Para eso está Made to Say It — para darle a las buenas palabras un lugar donde vivir.", "quote": "Cosas que vale la pena decir. Cosas que vale la pena regalar.", "valuesTitle": "Lo que representa la marca", "valuesP": "A medida que crezca la tienda, estas ideas ayudarán a que cada colección siga sintiéndose como Made to Say It.", "v1N": "01 • Personalidad", "v1T": "Di algo.", "v1P": "Cada pieza debe tener un punto de vista — divertido, significativo, familiar, atrevido o simplemente memorable.", "v2N": "02 • Estilo", "v2T": "Mantenlo pulido.", "v2P": "Incluso la frase más atrevida puede verse elevada, intencional y fácil de llevar, exhibir o regalar.", "v3N": "03 • Conexión", "v3T": "Hazlo personal.", "v3P": "Los mejores productos se sienten como si hubieran sido creados para una persona, un recuerdo, una cultura, un estado de ánimo o un chiste interno específico.", "closingTitle": "Apenas estamos comenzando.", "closingP": "Las primeras colecciones todavía están tomando forma, pero la idea ya está clara: crear piezas expresivas que se sientan bien para conservar y aún mejor para regalar.", "explore": "Explora las Colecciones", "tagline": "Cosas que vale la pena decir. Cosas que vale la pena regalar."}
+};
+function setLanguage(lang){
+  const t = copy[lang] || copy.en;
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.dataset.i18n;
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+    const key = el.dataset.i18nPlaceholder;
+    if (t[key] !== undefined) el.setAttribute("placeholder", t[key]);
+  });
+  document.documentElement.lang = lang;
+  document.getElementById("lang-en").classList.toggle("active", lang === "en");
+  document.getElementById("lang-es").classList.toggle("active", lang === "es");
+  localStorage.setItem("mtsi-language", lang);
+}
+document.addEventListener("DOMContentLoaded", () => setLanguage(localStorage.getItem("mtsi-language") || "en"));
+</script>
+
 </body>
 </html>

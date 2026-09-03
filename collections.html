@@ -68,10 +68,17 @@
       .card{min-height:300px}
       .card h3{font-size:38px}
     }
-  </style>
+  
+/* LANGUAGE SWITCH */
+.lang-switch{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;letter-spacing:.06em;white-space:nowrap}
+.lang-switch button{appearance:none;border:0;background:transparent;padding:4px 2px;cursor:pointer;font:inherit;color:#8a7d76}
+.lang-switch button.active{color:#cf8575}
+.lang-switch .sep{color:#c8b8b0}
+
+</style>
 </head>
 <body>
-  <div class="announcement">COMING SOON • THINGS WORTH SAYING • THINGS WORTH GIVING ♥</div>
+  <div class="announcement"><span data-i18n="announce">COMING SOON • THINGS WORTH SAYING • THINGS WORTH GIVING ♥</span></div>
 
   <header class="nav">
     <a class="logo" href="index.html" aria-label="Made to Say It home">
@@ -79,14 +86,19 @@
     </a>
 
     <nav class="menu" aria-label="Main navigation">
-      <a href="shop.html">Shop</a>
-      <a class="active" href="collections.html">Collections</a>
-      <a href="our-story.html">Our Story</a>
-      <a href="coming-soon.html">Coming Soon</a>
+      <a href="shop.html"><span data-i18n="navShop">Shop</span></a>
+      <a class="active" href="collections.html"><span data-i18n="navCollections">Collections</span></a>
+      <a href="our-story.html"><span data-i18n="navStory">Our Story</span></a>
+      <a href="coming-soon.html"><span data-i18n="navComing">Coming Soon</span></a>
     </nav>
 
     <div class="nav-actions">
-      <a class="loop" href="coming-soon.html">Stay in the loop ♥</a>
+    <div class="lang-switch" aria-label="Language">
+      <button type="button" id="lang-en" class="active" onclick="setLanguage('en')">EN</button>
+      <span class="sep">|</span>
+      <button type="button" id="lang-es" onclick="setLanguage('es')">ES</button>
+    </div>
+      <a class="loop" href="coming-soon.html#signup"><span data-i18n="loop">Stay in the loop ♥</span></a>
       <span aria-hidden="true">⌕</span>
       <span aria-hidden="true">♙</span>
       <span aria-hidden="true">▢</span>
@@ -95,90 +107,114 @@
 
   <main>
     <section class="hero">
-      <div class="eyebrow">Collections</div>
-      <h1>Different moods. Same <span class="accent">Made to Say It</span> attitude.</h1>
+      <div class="eyebrow" data-i18n="eyebrow">Collections</div>
+      <h1 data-i18n="heroTitle">Different moods. Same <span class="accent">Made to Say It</span> attitude.</h1>
       <div class="divider">♥</div>
-      <p>Some things are funny. Some are nostalgic. Some are proudly cultural. Some are just a little unhinged. These are the collections that will bring the brand to life.</p>
+      <p data-i18n="heroP">Some things are funny. Some are nostalgic. Some are proudly cultural. Some are just a little unhinged. These are the collections that will bring the brand to life.</p>
     </section>
 
     <section class="section">
       <div class="section-title">
-        <h2>Explore the collections</h2>
-        <p>Each collection will eventually contain its own mix of apparel, mugs, candles, totes, gifts, and more.</p>
+        <h2 data-i18n="sectionTitle">Explore the collections</h2>
+        <p data-i18n="sectionP">Each collection will eventually contain its own mix of apparel, mugs, candles, totes, gifts, and more.</p>
       </div>
 
       <div class="grid">
         <article class="card dark">
           <div class="top">
-            <div class="kicker">Collection 01</div>
-            <h3>Properly Unhinged</h3>
-            <p>Dry humor, bold sayings, and designs for the people who were absolutely thinking it first.</p>
-            <span class="status">Coming Soon</span>
+            <div class="kicker" data-i18n="c1K">Collection 01</div>
+            <h3 data-i18n="c1T">Properly Unhinged</h3>
+            <p data-i18n="c1P">Dry humor, bold sayings, and designs for the people who were absolutely thinking it first.</p>
+            <span class="status" data-i18n="badge">Coming Soon</span>
           </div>
-          <div class="bottom">Say the quiet part out loud.</div>
+          <div class="bottom" data-i18n="c1B">Say the quiet part out loud.</div>
         </article>
 
         <article class="card">
           <div class="top">
-            <div class="kicker">Collection 02</div>
-            <h3>Say It in Spanish</h3>
-            <p>Spanish sayings, expressions, and everyday phrases with personality — made to feel current, clever, and wearable.</p>
-            <span class="status">Coming Soon</span>
+            <div class="kicker" data-i18n="c2K">Collection 02</div>
+            <h3 data-i18n="c2T">Say It in Spanish</h3>
+            <p data-i18n="c2P">Spanish sayings, expressions, and everyday phrases with personality — made to feel current, clever, and wearable.</p>
+            <span class="status" data-i18n="badge">Coming Soon</span>
           </div>
           <div class="bottom">Porque algunas cosas suenan mejor en español.</div>
         </article>
 
         <article class="card">
           <div class="top">
-            <div class="kicker">Collection 03</div>
-            <h3>Colombian Collection</h3>
-            <p>Culture, humor, familiar phrases, and details that feel unmistakably Colombian without feeling touristy.</p>
-            <span class="status">Coming Soon</span>
+            <div class="kicker" data-i18n="c3K">Collection 03</div>
+            <h3 data-i18n="c3T">Colombian Collection</h3>
+            <p data-i18n="c3P">Culture, humor, familiar phrases, and details that feel unmistakably Colombian without feeling touristy.</p>
+            <span class="status" data-i18n="badge">Coming Soon</span>
           </div>
           <div class="bottom">Con orgullo. Con humor. Con estilo.</div>
         </article>
 
         <article class="card dark">
           <div class="top">
-            <div class="kicker">Collection 04</div>
-            <h3>Seasonal</h3>
-            <p>Limited drops for Halloween, holidays, celebrations, and the moments that deserve their own saying.</p>
-            <span class="status">Coming Soon</span>
+            <div class="kicker" data-i18n="c4K">Collection 04</div>
+            <h3 data-i18n="c4T">Seasonal</h3>
+            <p data-i18n="c4P">Limited drops for Halloween, holidays, celebrations, and the moments that deserve their own saying.</p>
+            <span class="status" data-i18n="badge">Coming Soon</span>
           </div>
-          <div class="bottom">Here for a good season.</div>
+          <div class="bottom" data-i18n="c4B">Here for a good season.</div>
         </article>
 
         <article class="card">
           <div class="top">
-            <div class="kicker">Collection 05</div>
-            <h3>Home + Gifts</h3>
-            <p>Thoughtful, funny, and giftable pieces for home, desks, hosts, friends, family, and the person who has everything.</p>
-            <span class="status">Coming Soon</span>
+            <div class="kicker" data-i18n="c5K">Collection 05</div>
+            <h3 data-i18n="c5T">Home + Gifts</h3>
+            <p data-i18n="c5P">Thoughtful, funny, and giftable pieces for home, desks, hosts, friends, family, and the person who has everything.</p>
+            <span class="status" data-i18n="badge">Coming Soon</span>
           </div>
-          <div class="bottom">Things worth giving.</div>
+          <div class="bottom" data-i18n="c5B">Things worth giving.</div>
         </article>
 
         <article class="card dark">
           <div class="top">
-            <div class="kicker">Collection 06</div>
-            <h3>Made to Say It Originals</h3>
-            <p>Signature brand pieces built around the Made to Say It voice — expressive, polished, and easy to gift.</p>
-            <span class="status">Coming Soon</span>
+            <div class="kicker" data-i18n="c6K">Collection 06</div>
+            <h3 data-i18n="c6T">Made to Say It Originals</h3>
+            <p data-i18n="c6P">Signature brand pieces built around the Made to Say It voice — expressive, polished, and easy to gift.</p>
+            <span class="status" data-i18n="badge">Coming Soon</span>
           </div>
-          <div class="bottom">Things worth saying.</div>
+          <div class="bottom" data-i18n="c6B">Things worth saying.</div>
         </article>
       </div>
 
       <div class="more">
-        <strong>More collections will be added as the brand grows.</strong>
-        <p>We can keep this page flexible, so future drops can be added without changing the overall look of the website.</p>
+        <strong data-i18n="moreTitle">More collections will be added as the brand grows.</strong>
+        <p data-i18n="moreP">We can keep this page flexible, so future drops can be added without changing the overall look of the website.</p>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="brand">Made to Say It</div>
-    <p>Things Worth Saying. Things Worth Giving.</p>
+    <p data-i18n="tagline">Things Worth Saying. Things Worth Giving.</p>
   </footer>
+
+<script>
+const copy = {
+  en: {"announce": "COMING SOON • THINGS WORTH SAYING • THINGS WORTH GIVING ♥", "navShop": "Shop", "navCollections": "Collections", "navStory": "Our Story", "navComing": "Coming Soon", "loop": "Stay in the loop ♥", "eyebrow": "Collections", "heroTitle": "Different moods. Same <span class=\"accent\">Made to Say It</span> attitude.", "heroP": "Some things are funny. Some are nostalgic. Some are proudly cultural. Some are just a little unhinged. These are the collections that will bring the brand to life.", "sectionTitle": "Explore the collections", "sectionP": "Each collection will eventually contain its own mix of apparel, mugs, candles, totes, gifts, and more.", "badge": "Coming Soon", "moreTitle": "More collections will be added as the brand grows.", "moreP": "We can keep this page flexible, so future drops can be added without changing the overall look of the website.", "tagline": "Things Worth Saying. Things Worth Giving.", "c1K": "Collection 01", "c2K": "Collection 02", "c3K": "Collection 03", "c4K": "Collection 04", "c5K": "Collection 05", "c6K": "Collection 06", "c1T": "Properly Unhinged", "c1P": "Dry humor, bold sayings, and designs for the people who were absolutely thinking it first.", "c1B": "Say the quiet part out loud.", "c2T": "Say It in Spanish", "c2P": "Spanish sayings, expressions, and everyday phrases with personality — made to feel current, clever, and wearable.", "c3T": "Colombian Collection", "c3P": "Culture, humor, familiar phrases, and details that feel unmistakably Colombian without feeling touristy.", "c4T": "Seasonal", "c4P": "Limited drops for Halloween, holidays, celebrations, and the moments that deserve their own saying.", "c4B": "Here for a good season.", "c5T": "Home + Gifts", "c5P": "Thoughtful, funny, and giftable pieces for home, desks, hosts, friends, family, and the person who has everything.", "c5B": "Things worth giving.", "c6T": "Made to Say It Originals", "c6P": "Signature brand pieces built around the Made to Say It voice — expressive, polished, and easy to gift.", "c6B": "Things worth saying."},
+  es: {"announce": "PRÓXIMAMENTE • COSAS QUE VALE LA PENA DECIR • COSAS QUE VALE LA PENA REGALAR ♥", "navShop": "Tienda", "navCollections": "Colecciones", "navStory": "Nuestra Historia", "navComing": "Próximamente", "loop": "Mantente al tanto ♥", "eyebrow": "Colecciones", "heroTitle": "Diferentes estilos. La misma actitud de <span class=\"accent\">Made to Say It</span>.", "heroP": "Algunas cosas son divertidas. Otras son nostálgicas. Algunas celebran la cultura con orgullo. Y otras son un poquito unhinged. Estas son las colecciones que darán vida a la marca.", "sectionTitle": "Explora las colecciones", "sectionP": "Cada colección tendrá su propia mezcla de ropa, tazas, velas, totes, regalos y mucho más.", "badge": "Próximamente", "moreTitle": "Añadiremos más colecciones a medida que crezca la marca.", "moreP": "Esta página está diseñada para crecer con nosotros, así podremos añadir nuevos lanzamientos sin cambiar el estilo general del sitio.", "tagline": "Cosas que vale la pena decir. Cosas que vale la pena regalar.", "c1K": "Colección 01", "c2K": "Colección 02", "c3K": "Colección 03", "c4K": "Colección 04", "c5K": "Colección 05", "c6K": "Colección 06", "c1T": "Properly Unhinged", "c1P": "Humor seco, frases atrevidas y diseños para quienes definitivamente ya lo estaban pensando.", "c1B": "Di en voz alta lo que todos piensan.", "c2T": "Dilo en Español", "c2P": "Dichos, expresiones y frases cotidianas en español con personalidad — actuales, ingeniosas y fáciles de llevar.", "c3T": "Colección Colombiana", "c3P": "Cultura, humor, frases conocidas y detalles inconfundiblemente colombianos sin sentirse turísticos.", "c4T": "Temporada", "c4P": "Lanzamientos limitados para Halloween, fiestas, celebraciones y esos momentos que merecen su propia frase.", "c4B": "Aquí por una buena temporada.", "c5T": "Hogar + Regalos", "c5P": "Piezas pensadas, divertidas y perfectas para regalar en casa, el escritorio, a anfitriones, amigos, familia y a esa persona que ya tiene de todo.", "c5B": "Cosas que vale la pena regalar.", "c6T": "Originales Made to Say It", "c6P": "Piezas emblemáticas creadas alrededor de la voz de Made to Say It — expresivas, pulidas y fáciles de regalar.", "c6B": "Cosas que vale la pena decir."}
+};
+function setLanguage(lang){
+  const t = copy[lang] || copy.en;
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.dataset.i18n;
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+    const key = el.dataset.i18nPlaceholder;
+    if (t[key] !== undefined) el.setAttribute("placeholder", t[key]);
+  });
+  document.documentElement.lang = lang;
+  document.getElementById("lang-en").classList.toggle("active", lang === "en");
+  document.getElementById("lang-es").classList.toggle("active", lang === "es");
+  localStorage.setItem("mtsi-language", lang);
+}
+document.addEventListener("DOMContentLoaded", () => setLanguage(localStorage.getItem("mtsi-language") || "en"));
+</script>
+
 </body>
 </html>
