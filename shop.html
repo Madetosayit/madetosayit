@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shop | Made to Say It</title>
-  <meta name="description" content="Shop Made to Say It — expressive pieces, thoughtful gifts, and collections worth saying something about." />
+  <meta name="description" content="Shop Made to Say It — expressive pieces, thoughtful gifts, and collections worth saying something about.">
   <style>
     :root{
       --cream:#fbf6f1;
@@ -71,13 +71,24 @@
 .lang-switch button.active{color:#cf8575}
 .lang-switch .sep{color:#c8b8b0}
 
+
+.product-card{padding:0;justify-content:flex-start}
+.product-card:before{display:none}
+.product-photo{display:block;background:var(--paper)}
+.product-photo img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain}
+.product-card .card-content{padding:24px;display:flex;flex-direction:column;flex:1}
+.product-card h3{font-size:28px;line-height:1.15}
+.product-card p{margin-bottom:22px;max-width:100%}
+.etsy-button{display:block;text-align:center;margin-top:auto;background:#111;color:#fff;padding:14px 18px;font-size:14px;font-weight:bold}
+.etsy-button:hover{background:#7e4b42}
+a:focus-visible,button:focus-visible{outline:3px solid #8b5147;outline-offset:4px}
 </style>
 </head>
 <body>
-  <div class="announcement"><span data-i18n="announce">COMING SOON • THINGS WORTH SAYING • THINGS WORTH GIVING ♥</span></div>
+  <div class="announcement"><span data-i18n="announce">THINGS WORTH SAYING • THINGS WORTH GIVING ♥</span></div>
   <header class="nav">
     <a class="logo" href="index.html" aria-label="Made to Say It home">
-      <img src="made-to-say-it-logo.png" alt="Made to Say It logo" />
+      <img src="made-to-say-it-logo.png" alt="Made to Say It logo">
     </a>
     <nav class="menu" aria-label="Main navigation">
       <a href="shop.html"><span data-i18n="navShop">Shop</span></a>
@@ -100,42 +111,150 @@
   <main>
     <section class="hero">
       <div class="eyebrow">Made to Say It</div>
-      <h1 data-i18n="heroTitle">We’re making things <span class="accent">worth saying.</span></h1>
+      <h1 data-i18n="heroTitle">Halloween with <span class="accent">something to say.</span></h1>
       <div class="divider">♥</div>
-      <p data-i18n="heroP">Expressive pieces, thoughtful gifts, and a little personality in every collection. The shop isn’t open just yet, but this is where everything will live when launch day arrives.</p>
-      <span class="coming" data-i18n="opening">Shop opening soon</span>
+      <p data-i18n="heroP">Discover Halloween tees with personality. Choose your favorite, then select your size and complete your purchase on Etsy.</p>
+      <span class="coming" data-i18n="opening">Available on Etsy</span>
     </section>
     <section class="section">
       <div class="section-title">
-        <h2 data-i18n="sectionTitle">What’s coming to the shop</h2>
-        <p data-i18n="sectionP">We’re building the collection carefully. Here’s a first look at the kinds of pieces you’ll be able to shop.</p>
+        <h2 data-i18n="sectionTitle">Shop the Halloween collection</h2>
+        <p data-i18n="sectionP">Ghosts, witches, vampires, and a little dark humor. Find the shirt that speaks for you.</p>
       </div>
       <div class="grid">
-        <article class="card" style="padding:0;justify-content:flex-start">
-  <a href="https://www.etsy.com/listing/4576205446/straight-outta-coffin-shirt-funny"
-     style="display:block;position:relative;z-index:1">
-    <img
-      src="straight-outta-coffin-fun-lifestyle.jpg"
-      alt="Straight Outta Coffin Halloween shirt worn by a man beside a skeleton"
-      style="display:block;width:100%;height:auto"
-    />
-  </a>
-  <div class="card-content" style="padding:24px">
-    <h3>Straight Outta Coffin</h3>
-    <p>Funny Halloween graphic tee.</p>
-    <a
-      href="https://www.etsy.com/listing/4576205446/straight-outta-coffin-shirt-funny"
-      style="display:inline-block;margin-top:20px;background:#111;color:#fff;padding:14px 22px;font-size:14px;font-weight:bold"
-    >Buy on Etsy</a>
-  </div>
-</article>
-        <article class="card"><span class="badge" data-i18n="badge">Coming Soon</span><div class="card-content"><h3 data-i18n="card2Title">Candles</h3><p data-i18n="card2P">Giftable, display-worthy candles with personality built right into the label.</p></div></article>
-        <article class="card"><span class="badge" data-i18n="badge">Coming Soon</span><div class="card-content"><h3 data-i18n="card3Title">Mugs</h3><p data-i18n="card3P">Morning coffee, afternoon tea, and a little attitude before either one is finished.</p></div></article>
-        <article class="card"><span class="badge" data-i18n="badge">Coming Soon</span><div class="card-content"><h3 data-i18n="card4Title">Bags + Extras</h3><p data-i18n="card4P">Totes and everyday extras designed to carry more than just your stuff.</p></div></article>
-        <article class="card"><span class="badge" data-i18n="badge">Coming Soon</span><div class="card-content"><h3 data-i18n="card5Title">Gifts</h3><p data-i18n="card5P">Things worth giving when a basic gift just won’t do.</p></div></article>
-        <article class="card"><span class="badge" data-i18n="badge">Coming Soon</span><div class="card-content"><h3 data-i18n="card6Title">Home + More</h3><p data-i18n="card6P">Small pieces for home, desk, and everyday life that still feel unmistakably Made to Say It.</p></div></article>
+        <article class="card product-card">
+          <a href="https://www.etsy.com/listing/4576205446/straight-outta-coffin-shirt-funny" class="product-photo" aria-label="Straight Outta Coffin">
+            <img src="straight-outta-coffin-fun-lifestyle.jpg" alt="Straight Outta Coffin shirt" width="1254" height="1254" loading="lazy">
+          </a>
+          <div class="card-content">
+            <h3>Straight Outta Coffin</h3>
+            <p data-i18n="product0">Funny Halloween graphic tee.</p>
+            <a class="etsy-button" href="https://www.etsy.com/listing/4576205446/straight-outta-coffin-shirt-funny" data-i18n="buyOnEtsy">Buy on Etsy</a>
+          </div>
+        </article>
+        <article class="card product-card">
+          <a href="https://www.etsy.com/listing/4575852605/funny-vampire-shirt-my-type-emotionally" class="product-photo" aria-label="Emotionally Undead — Female Vampire">
+            <img src="emotionally-undead-female-vampire.jpeg" alt="Emotionally Undead — Female Vampire shirt" width="1254" height="1254" loading="lazy">
+          </a>
+          <div class="card-content">
+            <h3>Emotionally Undead — Female Vampire</h3>
+            <p data-i18n="product1">Emotionally Undead (female vampire). Halloween graphic tee.</p>
+            <a class="etsy-button" href="https://www.etsy.com/listing/4575852605/funny-vampire-shirt-my-type-emotionally" data-i18n="buyOnEtsy">Buy on Etsy</a>
+          </div>
+        </article>
+        <article class="card product-card">
+          <a href="https://www.etsy.com/listing/4576063178/here-for-the-boos-shirt-funny-halloween" class="product-photo" aria-label="Here for the Boos">
+            <img src="here-for-the-boos.jpeg" alt="Here for the Boos shirt" width="1254" height="1254" loading="lazy">
+          </a>
+          <div class="card-content">
+            <h3>Here for the Boos</h3>
+            <p data-i18n="product2">Here for the Boos. Halloween graphic tee.</p>
+            <a class="etsy-button" href="https://www.etsy.com/listing/4576063178/here-for-the-boos-shirt-funny-halloween" data-i18n="buyOnEtsy">Buy on Etsy</a>
+          </div>
+        </article>
+        <article class="card product-card">
+          <a href="https://www.etsy.com/listing/4576094318/witch-better-have-my-candy-shirt-funny" class="product-photo" aria-label="Witch Better Have My Candy">
+            <img src="witch-better-have-my-candy.png" alt="Witch Better Have My Candy shirt" width="1254" height="1254" loading="lazy">
+          </a>
+          <div class="card-content">
+            <h3>Witch Better Have My Candy</h3>
+            <p data-i18n="product3">Witch better have my candy. Halloween graphic tee.</p>
+            <a class="etsy-button" href="https://www.etsy.com/listing/4576094318/witch-better-have-my-candy-shirt-funny" data-i18n="buyOnEtsy">Buy on Etsy</a>
+          </div>
+        </article>
+        <article class="card product-card">
+          <a href="https://www.etsy.com/listing/4576107216/this-is-some-boo-sheet-shirt-funny-ghost" class="product-photo" aria-label="This Is Some Boo Sheet">
+            <img src="this-is-some-boo-sheet.png" alt="This Is Some Boo Sheet shirt" width="1254" height="1254" loading="lazy">
+          </a>
+          <div class="card-content">
+            <h3>This Is Some Boo Sheet</h3>
+            <p data-i18n="product4">Boo Sheet. Halloween graphic tee.</p>
+            <a class="etsy-button" href="https://www.etsy.com/listing/4576107216/this-is-some-boo-sheet-shirt-funny-ghost" data-i18n="buyOnEtsy">Buy on Etsy</a>
+          </div>
+        </article>
+        <article class="card product-card">
+          <a href="https://www.etsy.com/listing/4576104517/im-just-here-for-the-candy-shirt-funny" class="product-photo" aria-label="Just Here for the Candy">
+            <img src="just-here-for-the-candy.jpeg" alt="Just Here for the Candy shirt" width="1254" height="1254" loading="lazy">
+          </a>
+          <div class="card-content">
+            <h3>Just Here for the Candy</h3>
+            <p data-i18n="product5">Just here for the candy. Halloween graphic tee.</p>
+            <a class="etsy-button" href="https://www.etsy.com/listing/4576104517/im-just-here-for-the-candy-shirt-funny" data-i18n="buyOnEtsy">Buy on Etsy</a>
+          </div>
+        </article>
+        <article class="card product-card">
+          <a href="https://www.etsy.com/listing/4576548565/dead-tired-ghost-t-shirt-funny-halloween" class="product-photo" aria-label="Dead Tired">
+            <img src="dead-tired.jpeg" alt="Dead Tired shirt" width="1254" height="1254" loading="lazy">
+          </a>
+          <div class="card-content">
+            <h3>Dead Tired</h3>
+            <p data-i18n="product6">Dead tired ghost. Halloween graphic tee.</p>
+            <a class="etsy-button" href="https://www.etsy.com/listing/4576548565/dead-tired-ghost-t-shirt-funny-halloween" data-i18n="buyOnEtsy">Buy on Etsy</a>
+          </div>
+        </article>
+        <article class="card product-card">
+          <a href="https://www.etsy.com/listing/4576585004/professional-ghoster-t-shirt-funny-ghost" class="product-photo" aria-label="Professional Ghoster">
+            <img src="professional-ghoster.jpeg" alt="Professional Ghoster shirt" width="1254" height="1254" loading="lazy">
+          </a>
+          <div class="card-content">
+            <h3>Professional Ghoster</h3>
+            <p data-i18n="product7">Professional ghoster. Halloween graphic tee.</p>
+            <a class="etsy-button" href="https://www.etsy.com/listing/4576585004/professional-ghoster-t-shirt-funny-ghost" data-i18n="buyOnEtsy">Buy on Etsy</a>
+          </div>
+        </article>
+        <article class="card product-card">
+          <a href="https://www.etsy.com/listing/4576604828/emotionally-undead-t-shirt-funny-vampire" class="product-photo" aria-label="Emotionally Undead — Male Vampire">
+            <img src="emotionally-undead-male-vampire.jpeg" alt="Emotionally Undead — Male Vampire shirt" width="1254" height="1254" loading="lazy">
+          </a>
+          <div class="card-content">
+            <h3>Emotionally Undead — Male Vampire</h3>
+            <p data-i18n="product8">Emotionally undead (male vampire). Halloween graphic tee.</p>
+            <a class="etsy-button" href="https://www.etsy.com/listing/4576604828/emotionally-undead-t-shirt-funny-vampire" data-i18n="buyOnEtsy">Buy on Etsy</a>
+          </div>
+        </article>
+        <article class="card product-card">
+          <a href="https://www.etsy.com/listing/4576631608/a-little-dead-inside-t-shirt-funny" class="product-photo" aria-label="A Little Dead Inside">
+            <img src="a-little-dead-inside.jpeg" alt="A Little Dead Inside shirt" width="1254" height="1254" loading="lazy">
+          </a>
+          <div class="card-content">
+            <h3>A Little Dead Inside</h3>
+            <p data-i18n="product9">A little dead inside. Halloween graphic tee.</p>
+            <a class="etsy-button" href="https://www.etsy.com/listing/4576631608/a-little-dead-inside-t-shirt-funny" data-i18n="buyOnEtsy">Buy on Etsy</a>
+          </div>
+        </article>
+        <article class="card product-card">
+          <a href="https://www.etsy.com/listing/4576725753/does-this-shirt-make-me-look-hexy-funny" class="product-photo" aria-label="Does This Shirt Make Me Look Hexy?">
+            <img src="does-this-shirt-make-me-look-hexy.jpeg" alt="Does This Shirt Make Me Look Hexy? shirt" width="1254" height="1254" loading="lazy">
+          </a>
+          <div class="card-content">
+            <h3>Does This Shirt Make Me Look Hexy?</h3>
+            <p data-i18n="product10">Hexy. Halloween graphic tee.</p>
+            <a class="etsy-button" href="https://www.etsy.com/listing/4576725753/does-this-shirt-make-me-look-hexy-funny" data-i18n="buyOnEtsy">Buy on Etsy</a>
+          </div>
+        </article>
+        <article class="card product-card">
+          <a href="https://www.etsy.com/listing/4576767187/i-like-my-men-six-feet-under-t-shirt" class="product-photo" aria-label="I Like My Men Six Feet Under">
+            <img src="i-like-my-men-six-feet-under.jpeg" alt="I Like My Men Six Feet Under shirt" width="1254" height="1254" loading="lazy">
+          </a>
+          <div class="card-content">
+            <h3>I Like My Men Six Feet Under</h3>
+            <p data-i18n="product11">Six feet under. Halloween graphic tee.</p>
+            <a class="etsy-button" href="https://www.etsy.com/listing/4576767187/i-like-my-men-six-feet-under-t-shirt" data-i18n="buyOnEtsy">Buy on Etsy</a>
+          </div>
+        </article>
+        <article class="card product-card">
+          <a href="https://www.etsy.com/listing/4576781271/que-susto-pues-colombian-halloween-shirt" class="product-photo" aria-label="Qué Susto Pues">
+            <img src="qu-susto-pues.jpeg" alt="Qué Susto Pues shirt" width="1254" height="1254" loading="lazy">
+          </a>
+          <div class="card-content">
+            <h3>Qué Susto Pues</h3>
+            <p data-i18n="product12">Que susto pues. Halloween graphic tee.</p>
+            <a class="etsy-button" href="https://www.etsy.com/listing/4576781271/que-susto-pues-colombian-halloween-shirt" data-i18n="buyOnEtsy">Buy on Etsy</a>
+          </div>
+        </article>
       </div>
-      <div class="note" data-i18n="note">No checkout yet — just a polished preview while the first collections are being created.</div>
+
+      <div class="note" data-i18n="note">See current prices, sizes, colors, and shipping details on each Etsy listing. Purchases are completed on Etsy.</div>
     </section>
   </main>
   <footer>
@@ -148,32 +267,10 @@ const copy = {
   en: {"announce": "COMING SOON • THINGS WORTH SAYING • THINGS WORTH GIVING ♥", "navShop": "Shop", "navCollections": "Collections", "navStory": "Our Story", "navComing": "Coming Soon", "loop": "Stay in the loop ♥", "heroTitle": "We’re making things <span class=\"accent\">worth saying.</span>", "heroP": "Expressive pieces, thoughtful gifts, and a little personality in every collection. The shop isn’t open just yet, but this is where everything will live when launch day arrives.", "opening": "Shop opening soon", "sectionTitle": "What’s coming to the shop", "sectionP": "We’re building the collection carefully. Here’s a first look at the kinds of pieces you’ll be able to shop.", "badge": "Coming Soon", "card1Title": "Apparel", "card1P": "Graphic tees and wearable statements made for the things you actually want to say.", "card2Title": "Candles", "card2P": "Giftable, display-worthy candles with personality built right into the label.", "card3Title": "Mugs", "card3P": "Morning coffee, afternoon tea, and a little attitude before either one is finished.", "card4Title": "Bags + Extras", "card4P": "Totes and everyday extras designed to carry more than just your stuff.", "card5Title": "Gifts", "card5P": "Things worth giving when a basic gift just won’t do.", "card6Title": "Home + More", "card6P": "Small pieces for home, desk, and everyday life that still feel unmistakably Made to Say It.", "note": "No checkout yet — just a polished preview while the first collections are being created.", "tagline": "Things Worth Saying. Things Worth Giving."},
   es: {"announce": "PRÓXIMAMENTE • COSAS QUE VALE LA PENA DECIR • COSAS QUE VALE LA PENA REGALAR ♥", "navShop": "Tienda", "navCollections": "Colecciones", "navStory": "Nuestra Historia", "navComing": "Próximamente", "loop": "Mantente al tanto ♥", "heroTitle": "Estamos creando cosas que <span class=\"accent\">vale la pena decir.</span>", "heroP": "Piezas con personalidad, regalos pensados con intención y un toque especial en cada colección. La tienda todavía no está abierta, pero aquí encontrarás todo cuando llegue el día del lanzamiento.", "opening": "Tienda próximamente", "sectionTitle": "Lo que llegará a la tienda", "sectionP": "Estamos creando la colección con cuidado. Aquí tienes un primer vistazo a los tipos de productos que podrás encontrar.", "badge": "Próximamente", "card1Title": "Ropa", "card1P": "Camisetas gráficas y prendas con mensajes hechas para decir lo que de verdad quieres decir.", "card2Title": "Velas", "card2P": "Velas perfectas para regalar y exhibir, con personalidad desde la etiqueta.", "card3Title": "Tazas", "card3P": "Café por la mañana, té por la tarde y un poquito de actitud antes de terminar cualquiera de los dos.", "card4Title": "Bolsos + Extras", "card4P": "Totes y accesorios para el día a día diseñados para llevar mucho más que tus cosas.", "card5Title": "Regalos", "card5P": "Cosas que vale la pena regalar cuando un regalo básico simplemente no basta.", "card6Title": "Hogar + Más", "card6P": "Pequeños detalles para el hogar, el escritorio y la vida diaria que siguen sintiéndose inconfundiblemente Made to Say It.", "note": "Todavía no hay proceso de compra — por ahora, esta es una vista previa mientras creamos las primeras colecciones.", "tagline": "Cosas que vale la pena decir. Cosas que vale la pena regalar."}
 };
-Object.assign(copy.en, {
-  announce: "THINGS WORTH SAYING • THINGS WORTH GIVING ♥",
-  heroP: "Shop our first Halloween tee below. Choose your size and complete your purchase on Etsy.",
-  opening: "Now shopping on Etsy",
-  sectionTitle: "Shop our first release",
-  sectionP: "Our first Halloween tee is here, with more products on the way.",
-  note: "Purchase available products on Etsy. Other categories are coming soon.",
-  coffinDescription: "Funny Halloween graphic tee.",
-  buyOnEtsy: "Buy on Etsy"
-});
 
-Object.assign(copy.es, {
-  announce: "COSAS QUE VALE LA PENA DECIR • COSAS QUE VALE LA PENA REGALAR ♥",
-  heroP: "Descubre nuestra primera camiseta de Halloween. Elige tu talla y completa tu compra en Etsy.",
-  opening: "Ya disponible en Etsy",
-  sectionTitle: "Nuestra primera camiseta",
-  sectionP: "Nuestra primera camiseta de Halloween ya está aquí. Pronto habrá más productos.",
-  note: "Compra los productos disponibles en Etsy. Las demás categorías estarán disponibles próximamente.",
-  coffinDescription: "Camiseta gráfica divertida de Halloween.",
-  buyOnEtsy: "Comprar en Etsy"
-});
-
-const coffinCard = document.querySelector(".grid .card");
-coffinCard.querySelector("p").setAttribute("data-i18n", "coffinDescription");
-coffinCard.querySelector(".card-content a").setAttribute("data-i18n", "buyOnEtsy");
-  function setLanguage(lang){
+  Object.assign(copy.en, {"announce": "THINGS WORTH SAYING • THINGS WORTH GIVING ♥", "heroTitle": "Halloween with <span class=\"accent\">something to say.</span>", "heroP": "Discover Halloween tees with personality. Choose your favorite, then select your size and complete your purchase on Etsy.", "opening": "Available on Etsy", "sectionTitle": "Shop the Halloween collection", "sectionP": "Ghosts, witches, vampires, and a little dark humor. Find the shirt that speaks for you.", "note": "See current prices, sizes, colors, and shipping details on each Etsy listing. Purchases are completed on Etsy.", "buyOnEtsy": "Buy on Etsy", "product0": "Funny Halloween graphic tee.", "product1": "Emotionally Undead (female vampire). Halloween graphic tee.", "product2": "Here for the Boos. Halloween graphic tee.", "product3": "Witch better have my candy. Halloween graphic tee.", "product4": "Boo Sheet. Halloween graphic tee.", "product5": "Just here for the candy. Halloween graphic tee.", "product6": "Dead tired ghost. Halloween graphic tee.", "product7": "Professional ghoster. Halloween graphic tee.", "product8": "Emotionally undead (male vampire). Halloween graphic tee.", "product9": "A little dead inside. Halloween graphic tee.", "product10": "Hexy. Halloween graphic tee.", "product11": "Six feet under. Halloween graphic tee.", "product12": "Que susto pues. Halloween graphic tee."});
+Object.assign(copy.es, {"announce": "COSAS QUE VALE LA PENA DECIR • COSAS QUE VALE LA PENA REGALAR ♥", "heroTitle": "Halloween con <span class=\"accent\">mucho que decir.</span>", "heroP": "Descubre camisetas de Halloween con personalidad. Elige tu favorita, selecciona tu talla y completa tu compra en Etsy.", "opening": "Disponible en Etsy", "sectionTitle": "Colección de Halloween", "sectionP": "Fantasmas, brujas, vampiros y un poco de humor oscuro. Encuentra la camiseta que habla por ti.", "note": "Consulta los precios actuales, tallas, colores y detalles de envío en cada anuncio de Etsy. Las compras se completan en Etsy.", "buyOnEtsy": "Comprar en Etsy", "product0": "Camiseta gráfica divertida de Halloween.", "product1": "Camiseta de vampira con humor oscuro.", "product2": "Camiseta de Halloween con un juego de palabras fantasmal.", "product3": "Camiseta de bruja para amantes de los dulces.", "product4": "Camiseta de fantasma con humor de Halloween.", "product5": "Camiseta de Halloween para amantes de los dulces.", "product6": "Camiseta de fantasma para días de mucho cansancio.", "product7": "Camiseta de fantasma con un toque de humor.", "product8": "Camiseta de vampiro con humor oscuro.", "product9": "Camiseta de Halloween con humor oscuro.", "product10": "Camiseta de bruja con un toque coqueto.", "product11": "Camiseta de Halloween con humor oscuro.", "product12": "Camiseta de Halloween con personalidad colombiana."});
+function setLanguage(lang){
   const t = copy[lang] || copy.en;
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.dataset.i18n;
