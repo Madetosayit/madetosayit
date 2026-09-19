@@ -88,7 +88,7 @@
     </a>
 
     <nav class="menu" aria-label="Main navigation">
-      <a href="shop.html"><span data-i18n="navShop">Shop</span></a>
+      <a href="shop.html?view=halloween#apparel"><span data-i18n="navShop">Shop</span></a>
       <a class="active" href="collections.html"><span data-i18n="navCollections">Collections</span></a>
       <a href="our-story.html"><span data-i18n="navStory">Our Story</span></a>
       <a href="coming-soon.html"><span data-i18n="navComing">Coming Soon</span></a>
@@ -127,9 +127,9 @@
             <div class="kicker" data-i18n="c1K">Collection 01</div>
             <h3 data-i18n="c1T">Properly Unhinged</h3>
             <p data-i18n="c1P">Dry humor, bold sayings, and designs for the people who were absolutely thinking it first.</p>
-            <span class="status" data-i18n="badge">Coming Soon</span>
+            <span class="status" data-i18n="unhingedAvailable">Available Now</span>
           </div>
-          <div class="bottom" data-i18n="c1B">Say the quiet part out loud.</div>
+          <a class="bottom holiday-button" data-i18n="c1B" href="shop.html?view=properly-unhinged#properly-unhinged">Shop Properly Unhinged</a>
         </article>
 
         <article class="card" id="say-it-in-spanish">
@@ -153,13 +153,13 @@
         </article>
 
         <article class="card dark" id="holiday-collections">
-          <a href="shop.html" class="holiday-photo" aria-label="Halloween"><img src="straight-outta-coffin-fun-lifestyle.jpg" alt="Straight Outta Coffin Halloween shirt" loading="lazy" width="1254" height="1254"></a><div class="top">
+          <a href="shop.html?view=halloween#apparel" class="holiday-photo" aria-label="Halloween"><img src="straight-outta-coffin-fun-lifestyle.jpg" alt="Straight Outta Coffin Halloween shirt" loading="lazy" width="1254" height="1254"></a><div class="top">
             <div class="kicker" data-i18n="c4K">Collection 04</div>
             <h3 data-i18n="c4T">Holiday Collections</h3>
             <p data-i18n="c4P">Our Halloween shirts and mugs are here! Explore ghosts, witches, vampires, and dark humor, then buy your favorite on Etsy.</p>
             <span class="status" data-i18n="holidayStatus">Halloween available now</span>
           </div>
-          <a class="bottom holiday-button" data-i18n="c4B" href="shop.html">Shop Halloween →</a>
+          <a class="bottom holiday-button" data-i18n="c4B" href="shop.html?view=halloween#apparel">Shop Halloween →</a>
         </article>
 
         <article class="card" id="home-gifts">
@@ -212,6 +212,8 @@ const copy = {
 };
 Object.assign(copy.en, {"c4T": "Holiday Collections", "c4P": "Our Halloween shirts and mugs are here! Explore ghosts, witches, vampires, and dark humor, then buy your favorite on Etsy.", "c4B": "Shop Halloween →", "holidayStatus": "Halloween available now", "announce": "THINGS WORTH SAYING • THINGS WORTH GIVING ♥", "sectionP": "Shop our Halloween collection now and explore what’s coming next."});
 Object.assign(copy.es, {"c4T": "Colecciones Festivas", "c4P": "¡Ya llegaron nuestras camisetas y tazas de Halloween! Explora fantasmas, brujas, vampiros y humor oscuro, y compra tu favorita en Etsy.", "c4B": "Ver Halloween →", "holidayStatus": "Halloween ya disponible", "announce": "COSAS QUE VALE LA PENA DECIR • COSAS QUE VALE LA PENA REGALAR ♥", "sectionP": "Descubre nuestra colección de Halloween y lo que llegará próximamente."});
+Object.assign(copy.en,{unhingedAvailable:"Available Now",c1B:"Shop Properly Unhinged",sectionP:"Shop Halloween and Properly Unhinged, and explore what’s coming next."});
+Object.assign(copy.es,{unhingedAvailable:"Ya Disponible",c1B:"Ver Properly Unhinged",sectionP:"Descubre Halloween y Properly Unhinged, y explora lo que llegará próximamente."});
 function setLanguage(lang){
   const t = copy[lang] || copy.en;
   document.querySelectorAll("[data-i18n]").forEach(el => {
