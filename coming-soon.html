@@ -57,7 +57,7 @@ footer{width:min(1160px,92%);margin:0 auto;padding:34px 0 46px;display:flex;just
 <main>
 <section class="hero"><div class="hero-inner"><div class="kicker" data-i18n="kicker">Coming Soon</div><div class="divider">♥</div>
 <h1 data-i18n="heroTitle">Something <span class="accent">worth waiting for.</span></h1>
-<p data-i18n="heroP">Our Halloween shirts and mugs are here, with more expressive pieces and thoughtful gifts on the way. Join our list for new collections and updates.</p>
+<p data-i18n="heroP">Halloween, Properly Unhinged, and Out to Sea are here, with more designs on the way. Join our list for new collections and updates.</p>
 </div></section>
 <section class="preview"><div class="section-head"><h2 data-i18n="previewTitle">A little preview of what’s coming</h2><p data-i18n="previewP">Explore what’s available now and what’s coming next from Made to Say It.</p></div>
 <div class="grid">
@@ -65,7 +65,7 @@ footer{width:min(1160px,92%);margin:0 auto;padding:34px 0 46px;display:flex;just
 <article class="card"><div><small>02</small><h3 data-i18n="c2T">Say It in Spanish</h3><p data-i18n="c2P">Expressions, sayings, and personality that sometimes just sound better en español.</p></div><div class="tag" data-i18n="badge">Coming Soon</div></article>
 <article class="card"><div><small>03</small><h3 data-i18n="c3T">Colombian Collection</h3><p data-i18n="c3P">Familiar phrases, culture, humor, and pieces made with Colombian personality.</p></div><div class="tag" data-i18n="badge">Coming Soon</div></article>
 <article class="card"><div><small>04</small><h3 data-i18n="c4T">Seasonal</h3><p data-i18n="c4P">Limited drops for Halloween, holidays, celebrations, and moments worth saying something about.</p></div><a class="tag" data-i18n="seasonalLive" href="shop.html?view=halloween#apparel">Shop Halloween</a></article>
-<article class="card"><div><small>05</small><h3 data-i18n="c5T">Out to Sea</h3><p data-i18n="c5P">Cruise humor, vacation mode, and pieces made for people who would rather be somewhere at sea.</p></div><div class="tag" data-i18n="badge">Coming Soon</div></article>
+<article class="card"><div><small>05</small><h3 data-i18n="c5T">Out to Sea</h3><p data-i18n="c5P">Cruise humor, vacation mode, and pieces made for people who would rather be somewhere at sea.</p></div><a class="tag" data-i18n="seaAvailable" href="shop.html?view=out-to-sea#out-to-sea">Shop Out to Sea</a></article>
 </div></section>
 <section class="signup" id="signup"><div class="kicker" data-i18n="signupK">Stay in the Loop</div><h2 data-i18n="signupTitle">Be the first to know.</h2>
 <p data-i18n="signupP">Join the list for new collections, fresh designs, and special offers. Unsubscribe anytime.</p>
@@ -82,6 +82,8 @@ Object.assign(copy.en,{"announce": "Things Worth Saying • Things Worth Giving"
 Object.assign(copy.es,{"announce": "Cosas que vale la pena decir • Cosas que vale la pena regalar", "heroP": "Nuestras camisetas y tazas de Halloween ya están disponibles. Pronto llegarán más diseños y regalos con personalidad. Únete a nuestra lista para recibir novedades.", "previewP": "Descubre lo que ya está disponible y lo que llegará próximamente a Made to Say It.", "signupP": "Recibe novedades sobre colecciones, nuevos diseños y ofertas especiales. Puedes darte de baja cuando quieras.", "formNote": "Después de registrarte, revisa tu correo y haz clic en el enlace de confirmación para unirte a la lista. El formulario está en inglés.", "openForm": "Abrir el formulario en una nueva pestaña", "seasonalLive": "Ver Halloween"});
 Object.assign(copy.en,{unhingedAvailable:"Shop Properly Unhinged",heroP:"Halloween and Properly Unhinged are here, with more expressive pieces and thoughtful gifts on the way. Join our list for new collections and updates."});
 Object.assign(copy.es,{unhingedAvailable:"Ver Properly Unhinged",heroP:"Halloween y Properly Unhinged ya están disponibles. Pronto llegarán más diseños y regalos con personalidad. Únete a nuestra lista para recibir novedades."});
+Object.assign(copy.en,{"seaAvailable": "Shop Out to Sea", "heroP": "Halloween, Properly Unhinged, and Out to Sea are here, with more designs on the way. Join our list for new collections and updates."});
+Object.assign(copy.es,{"seaAvailable": "Ver Out to Sea", "heroP": "Halloween, Properly Unhinged y Out to Sea ya están disponibles. Pronto llegarán más diseños. Únete a nuestra lista para recibir novedades."});
 function setLanguage(lang){
   const t = copy[lang] || copy.en;
   document.querySelectorAll("[data-i18n]").forEach(el => {

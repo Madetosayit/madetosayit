@@ -118,7 +118,7 @@
     <section class="section">
       <div class="section-title">
         <h2 data-i18n="sectionTitle">Explore the collections</h2>
-        <p data-i18n="sectionP">Shop our Halloween collection now and explore what’s coming next.</p>
+        <p data-i18n="sectionP">Shop Halloween, Properly Unhinged, and Out to Sea. Explore what’s coming next.</p>
       </div>
 
       <div class="grid">
@@ -187,9 +187,9 @@
             <div class="kicker" data-i18n="c7K">Collection 07</div>
             <h3 data-i18n="c7T">Out to Sea</h3>
             <p data-i18n="c7P">Cruise humor, vacation-mode sayings, and expressive pieces made for sea days, port days, and everything in between.</p>
-            <span class="status" data-i18n="badge">Coming Soon</span>
+            <span class="status" data-i18n="seaAvailable">Available Now</span>
           </div>
-          <div class="bottom" data-i18n="c7B">Cruise mode: on.</div>
+          <a class="bottom holiday-button" data-i18n="c7B" href="shop.html?view=out-to-sea#out-to-sea">Shop Out to Sea</a>
         </article>
       </div>
 
@@ -214,6 +214,8 @@ Object.assign(copy.en, {"c4T": "Holiday Collections", "c4P": "Our Halloween shir
 Object.assign(copy.es, {"c4T": "Colecciones Festivas", "c4P": "¡Ya llegaron nuestras camisetas y tazas de Halloween! Explora fantasmas, brujas, vampiros y humor oscuro, y compra tu favorita en Etsy.", "c4B": "Ver Halloween →", "holidayStatus": "Halloween ya disponible", "announce": "COSAS QUE VALE LA PENA DECIR • COSAS QUE VALE LA PENA REGALAR ♥", "sectionP": "Descubre nuestra colección de Halloween y lo que llegará próximamente."});
 Object.assign(copy.en,{unhingedAvailable:"Available Now",c1B:"Shop Properly Unhinged",sectionP:"Shop Halloween and Properly Unhinged, and explore what’s coming next."});
 Object.assign(copy.es,{unhingedAvailable:"Ya Disponible",c1B:"Ver Properly Unhinged",sectionP:"Descubre Halloween y Properly Unhinged, y explora lo que llegará próximamente."});
+Object.assign(copy.en,{"seaAvailable": "Available Now", "c7B": "Shop Out to Sea", "sectionP": "Shop Halloween, Properly Unhinged, and Out to Sea. Explore what’s coming next."});
+Object.assign(copy.es,{"seaAvailable": "Ya Disponible", "c7B": "Ver Out to Sea", "sectionP": "Descubre Halloween, Properly Unhinged y Out to Sea. Explora lo que llegará próximamente."});
 function setLanguage(lang){
   const t = copy[lang] || copy.en;
   document.querySelectorAll("[data-i18n]").forEach(el => {
