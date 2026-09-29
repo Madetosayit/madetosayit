@@ -118,7 +118,7 @@
     <section class="section">
       <div class="section-title">
         <h2 data-i18n="sectionTitle">Explore the collections</h2>
-        <p data-i18n="sectionP">Shop Halloween, Properly Unhinged, and Out to Sea. Explore what’s coming next.</p>
+        <p data-i18n="sectionP">Shop Holiday Collections, Properly Unhinged, and Out to Sea. Explore what’s coming next.</p>
       </div>
 
       <div class="grid">
@@ -156,10 +156,10 @@
           <div class="top">
             <div class="kicker" data-i18n="c4K">Collection 04</div>
             <h3 data-i18n="c4T">Holiday Collections</h3>
-            <p data-i18n="c4P">Our Halloween shirts and mugs are here! Explore ghosts, witches, vampires, and dark humor, then buy your favorite on Etsy.</p>
-            <span class="status" data-i18n="holidayStatus">Halloween available now</span>
+            <p data-i18n="c4P">Seasonal shirts and mugs for the moments worth celebrating. Shop Halloween, Fall, and Thanksgiving favorites.</p>
+            <span class="status" data-i18n="holidayStatus">Available Now</span>
           </div>
-          <a class="bottom holiday-button" data-i18n="c4B" href="shop.html?view=halloween#apparel">Shop Halloween →</a>
+          <a class="bottom holiday-button" data-i18n="c4B" href="shop.html?view=holidays#fall-thanksgiving">Shop Holiday Collections</a>
         </article>
 
         <article class="card" id="home-gifts">
@@ -216,6 +216,8 @@ Object.assign(copy.en,{unhingedAvailable:"Available Now",c1B:"Shop Properly Unhi
 Object.assign(copy.es,{unhingedAvailable:"Ya Disponible",c1B:"Ver Properly Unhinged",sectionP:"Descubre Halloween y Properly Unhinged, y explora lo que llegará próximamente."});
 Object.assign(copy.en,{"seaAvailable": "Available Now", "c7B": "Shop Out to Sea", "sectionP": "Shop Halloween, Properly Unhinged, and Out to Sea. Explore what’s coming next."});
 Object.assign(copy.es,{"seaAvailable": "Ya Disponible", "c7B": "Ver Out to Sea", "sectionP": "Descubre Halloween, Properly Unhinged y Out to Sea. Explora lo que llegará próximamente."});
+Object.assign(copy.en,{"c4P": "Seasonal shirts and mugs for the moments worth celebrating. Shop Halloween, Fall, and Thanksgiving favorites.", "c4B": "Shop Holiday Collections", "holidayStatus": "Available Now", "sectionP": "Shop Holiday Collections, Properly Unhinged, and Out to Sea. Explore what’s coming next."});
+Object.assign(copy.es,{"c4P": "Camisetas y tazas de temporada para celebrar. Descubre favoritos de Halloween, otoño y Acción de Gracias.", "c4B": "Ver Colecciones Festivas", "holidayStatus": "Ya Disponible", "sectionP": "Descubre Colecciones Festivas, Properly Unhinged y Out to Sea. Explora lo que llegará próximamente."});
 function setLanguage(lang){
   const t = copy[lang] || copy.en;
   document.querySelectorAll("[data-i18n]").forEach(el => {
