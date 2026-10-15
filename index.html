@@ -433,6 +433,24 @@ footer{
   .future-grid{grid-template-columns:1fr}
   footer{flex-direction:column;gap:8px}
 }
+
+.search-toggle{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;width:44px;height:44px;padding:9px;border:1px solid var(--line);border-radius:50%;background:var(--paper);color:var(--ink);cursor:pointer}
+.search-toggle svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8}
+.search-toggle:focus-visible,.site-search a:focus-visible,.site-search button:focus-visible{outline:3px solid #9b5141;outline-offset:3px}
+.site-search{box-sizing:border-box;width:min(680px,94vw);max-height:85vh;max-height:85dvh;padding:26px;border:1px solid var(--line);border-radius:18px;background:var(--paper);color:var(--ink)}
+.site-search::backdrop{background:rgba(0,0,0,.55)}
+.search-heading{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.search-heading h2{font:normal 32px Georgia,serif;margin:0}
+.search-close{background:none;border:0;min-width:44px;min-height:44px;font-size:30px;cursor:pointer;color:var(--ink)}
+.site-search label{display:block;margin:18px 0 8px;font-weight:700}
+.site-search input{box-sizing:border-box;width:100%;padding:14px;border:1px solid #87746c;border-radius:7px;font:inherit;background:white;color:#111}
+.site-search input:focus{outline:2px solid #9b5141;outline-offset:2px}
+.search-status{line-height:1.5;color:var(--muted)}
+.search-results{list-style:none;margin:0;padding:0}
+.search-results li{border-top:1px solid var(--line)}
+.search-results a{display:block;padding:15px 4px;text-decoration:underline;text-underline-offset:3px;line-height:1.5}
+.search-browse{display:inline-block;margin-top:18px;text-decoration:underline;font-weight:700}
+@media(max-width:760px){.nav-right{gap:8px;flex-wrap:wrap}.site-search{padding:18px}.search-heading h2{font-size:27px}}
 </style>
 </head>
 
@@ -456,12 +474,12 @@ footer{
     </div>
 
     <div class="nav-right">
+      <button class="search-toggle" type="button" aria-label="Search products" aria-haspopup="dialog" aria-controls="product-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 5 5"></path></svg></button>
       <div class="lang-switch" aria-label="Language">
         <button type="button" id="lang-en" class="active" onclick="setLanguage('en')">EN</button><span class="sep">|</span><button type="button" id="lang-es" onclick="setLanguage('es')">ES</button>
       </div>
       <a class="loop-btn" href="coming-soon.html#signup"><span data-i18n="loop">Stay in the loop ♥</span></a>
       <div class="utility" aria-hidden="true">
-        <svg viewbox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="M16 16l5 5"></path></svg>
         <svg viewbox="0 0 24 24"><circle cx="12" cy="7" r="4"></circle><path d="M5 22v-3a7 7 0 0 1 14 0v3"></path></svg>
         <svg viewbox="0 0 24 24"><path d="M5 8h14l1 13H4L5 8z"></path><path d="M9 8V5a3 3 0 0 1 6 0v3"></path></svg>
       </div>
@@ -681,6 +699,83 @@ function setLanguage(lang){
  localStorage.setItem("mtsi-language",lang);
 }
 document.addEventListener("DOMContentLoaded",()=>setLanguage(localStorage.getItem("mtsi-language")||"en"));
+</script>
+<dialog class="site-search" id="product-search" aria-labelledby="search-title">
+  <div class="search-heading"><h2 id="search-title">Find your favorite saying</h2><button class="search-close" type="button" aria-label="Close search">×</button></div>
+  <label for="search-query" id="search-label">Search products and collections</label>
+  <input id="search-query" type="search" placeholder="Try ghost, mugs, or Out to Sea" autocomplete="off" maxlength="120">
+  <p class="search-status" role="status" aria-live="polite"></p>
+  <ul class="search-results"></ul>
+  <a class="search-browse" href="shop.html">Browse all products</a>
+</dialog>
+<script>
+(() => {
+  const dialog = document.getElementById('product-search');
+  const toggle = document.querySelector('.search-toggle');
+  const input = document.getElementById('search-query');
+  const status = dialog.querySelector('.search-status');
+  const results = dialog.querySelector('.search-results');
+  const labels = {
+    en: {title:'Find your favorite saying',label:'Search products and collections',placeholder:'Try ghost, mugs, or Out to Sea',open:'Search products',close:'Close search',browse:'Browse all products',hint:'Search by saying, product type, or collection.',loading:'Loading products…',error:'Products could not load. Close and reopen search to try again, or browse the shop below.',empty:'No matches. Try a shorter phrase or browse all products.',count:n=>n+' matching '+(n===1?'product':'products')+'. Select a result to shop on Etsy.'},
+    es: {title:'Encuentra tu frase favorita',label:'Buscar productos y colecciones',placeholder:'Prueba ghost, tazas u Out to Sea',open:'Buscar productos',close:'Cerrar búsqueda',browse:'Ver todos los productos',hint:'Busca por frase, tipo de producto o colección.',loading:'Cargando productos…',error:'No se pudieron cargar los productos. Cierra y abre la búsqueda para reintentar o visita la tienda abajo.',empty:'Sin resultados. Prueba una frase más corta o explora la tienda.',count:n=>n+' '+(n===1?'producto encontrado':'productos encontrados')+'. Elige uno para comprar en Etsy.'}
+  };
+  let catalog = null, pending = null, failed = false;
+  const text = () => labels[document.documentElement.lang] || labels.en;
+  function normalize(value){return value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();}
+  function render(){
+    results.replaceChildren();
+    const t = text();
+    if(pending){status.textContent=t.loading;return;}
+    if(failed){status.textContent=t.error;return;}
+    const terms=normalize(input.value).split(' ').filter(Boolean);
+    if(!terms.length){status.textContent=t.hint;return;}
+    const matches=(catalog||[]).filter(p=>terms.every(term=>p.search.includes(term)));
+    status.textContent=matches.length?t.count(matches.length):t.empty;
+    for(const product of matches){const li=document.createElement('li');const a=document.createElement('a');a.href=product.url;a.textContent=product.title;li.append(a);results.append(li);}
+  }
+  function translate(){
+    const t=text();
+    document.getElementById('search-title').textContent=t.title;
+    document.getElementById('search-label').textContent=t.label;
+    input.placeholder=t.placeholder;
+    toggle.setAttribute('aria-label',t.open);
+    dialog.querySelector('.search-close').setAttribute('aria-label',t.close);
+    dialog.querySelector('.search-browse').textContent=t.browse;
+    render();
+  }
+  async function load(){
+    if(catalog||pending)return;
+    failed=false;
+    const controller=new AbortController();
+    const timeout=setTimeout(()=>controller.abort(),12000);
+    pending=fetch('shop.html',{signal:controller.signal}).then(response=>{if(!response.ok)throw Error('Shop unavailable');return response.text();}).then(html=>{
+      const doc=new DOMParser().parseFromString(html,'text/html');
+      catalog=Array.from(doc.querySelectorAll('.product-card')).map(card=>{
+        const title=card.querySelector('h3')?.textContent?.trim();
+        const href=card.querySelector('a[href]')?.getAttribute('href');
+        if(!title||!href)return null;
+        const url=new URL(href,location.href);
+        if(url.protocol!=='https:'||!['etsy.com','www.etsy.com'].includes(url.hostname))return null;
+        const section=card.closest('section');
+        let words=[title,card.textContent,card.querySelector('img')?.alt,section?.id,section?.querySelector('h2')?.textContent].join(' ');
+        if(/shirt|tee|apparel/i.test(words))words+=' shirt shirts tee tees tshirt t shirt camisetas ropa apparel';
+        if(/mug/i.test(words))words+=' mug mugs taza tazas';
+        if(/tote|bags/i.test(words))words+=' tote totes bag bags bolso bolsos bolsa bolsas';
+        if(/fall|thanksgiving|halloween/i.test(words))words+=' seasonal holiday holidays temporada';
+        return {title,url:url.href,search:normalize(words)};
+      }).filter(Boolean);
+      if(!catalog.length){catalog=null;throw Error('Empty catalog');}
+    }).catch(()=>{failed=true;}).finally(()=>{clearTimeout(timeout);pending=null;render();});
+    render();
+    await pending;
+  }
+  toggle.addEventListener('click',()=>{translate();dialog.showModal();input.focus();load();});
+  dialog.querySelector('.search-close').addEventListener('click',()=>dialog.close());
+  dialog.addEventListener('close',()=>toggle.focus());
+  input.addEventListener('input',render);
+  new MutationObserver(translate).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+  translate();
+})();
 </script>
 </body>
 </html>
