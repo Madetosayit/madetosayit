@@ -156,10 +156,10 @@
           <div class="top">
             <div class="kicker" data-i18n="c4K">Collection 04</div>
             <h3 data-i18n="c4T">Holiday Collections</h3>
-            <p data-i18n="c4P">Seasonal shirts, mugs, and totes for the moments worth celebrating. Shop Halloween, Fall, and Thanksgiving favorites.</p>
+            <p data-i18n="c4P">Seasonal shirts, mugs, totes, and pet apparel for the moments worth celebrating. Explore Christmas, Fall &amp; Thanksgiving, and Halloween.</p>
             <span class="status" data-i18n="holidayStatus">Available Now</span>
           </div>
-          <a class="bottom holiday-button" data-i18n="c4B" href="shop.html?view=holidays#fall-thanksgiving">Shop Holiday Collections</a>
+          <a class="bottom holiday-button" data-i18n="c4B" href="shop.html?view=holidays#christmas-shirts">Shop Holiday Collections</a>
         </article>
 
         <article class="card" id="home-gifts">
@@ -191,7 +191,7 @@
           </div>
           <a class="bottom holiday-button" data-i18n="c7B" href="shop.html?view=out-to-sea#out-to-sea">Shop Out to Sea</a>
         </article>
-      <article class="card" id="bags"><div class="top"><div class="kicker" data-i18n="bagsK">Collection 08</div><h3 data-i18n="bagsT">Bags + Extras</h3><p data-i18n="bagsP">Totes with personality for Halloween, Fall, and Thanksgiving, ready to carry your everyday essentials.</p><span class="status" data-i18n="bagsAvailable">Available Now</span></div><a class="bottom holiday-button" data-i18n="bagsB" href="shop.html?view=bags#bags">Shop Bags</a></article><article class="card" id="fur-the-love-of-it"><div class="top"><div class="kicker" data-i18n="furK">Collection 09</div><h3>Fur the Love of It</h3><p data-i18n="furP">Personality-filled pieces for pets and the people who love them. Start with a festive shirt for your four-legged friend.</p><span class="status" data-i18n="furStatus">Available Now</span></div><a class="bottom holiday-button" data-i18n="furButton" href="shop.html?view=fur-the-love-of-it#fur-the-love-of-it">Shop Fur the Love of It</a></article></div>
+      <article class="card" id="bags"><div class="top"><div class="kicker" data-i18n="bagsK">Collection 08</div><h3 data-i18n="bagsT">Bags + Extras</h3><p data-i18n="bagsP">Totes with personality for Christmas, Fall &amp; Thanksgiving, and Halloween, ready to carry your everyday essentials.</p><span class="status" data-i18n="bagsAvailable">Available Now</span></div><a class="bottom holiday-button" data-i18n="bagsB" href="shop.html?view=bags#christmas-totes">Shop Bags</a></article><article class="card" id="fur-the-love-of-it"><div class="top"><div class="kicker" data-i18n="furK">Collection 09</div><h3>Fur the Love of It</h3><p data-i18n="furP">Personality-filled pieces for pets and the people who love them. Start with a festive shirt for your four-legged friend.</p><span class="status" data-i18n="furStatus">Available Now</span></div><a class="bottom holiday-button" data-i18n="furButton" href="shop.html?view=fur-the-love-of-it#fur-the-love-of-it">Shop Fur the Love of It</a></article></div>
 
       <div class="more">
         <strong data-i18n="moreTitle">More collections will be added as the brand grows.</strong>
@@ -224,6 +224,8 @@ Object.assign(copy.en,{"bagsP": "Totes with personality for Halloween, Fall, and
 Object.assign(copy.es,{"bagsP": "Bolsos con personalidad de Halloween, otoño y Acción de Gracias para llevar tus cosas de cada día."});
 Object.assign(copy.en,{"furK": "Collection 09", "furP": "Personality-filled pieces for pets and the people who love them. Start with a festive shirt for your four-legged friend.", "furStatus": "Available Now", "furButton": "Shop Fur the Love of It"});
 Object.assign(copy.es,{"furK": "Colección 09", "furP": "Piezas con personalidad para mascotas y quienes las adoran. Empieza con una camiseta festiva para tu amigo de cuatro patas.", "furStatus": "Ya Disponible", "furButton": "Ver Fur the Love of It"});
+Object.assign(copy.en,{"c4P": "Seasonal shirts, mugs, totes, and pet apparel for the moments worth celebrating. Explore Christmas, Fall & Thanksgiving, and Halloween.", "bagsP": "Totes with personality for Christmas, Fall & Thanksgiving, and Halloween, ready to carry your everyday essentials."});
+Object.assign(copy.es,{"c4P": "Camisetas, tazas, bolsos y ropa para mascotas para celebrar. Descubre Navidad, otoño y Acción de Gracias, y Halloween.", "bagsP": "Bolsos con personalidad de Navidad, otoño y Acción de Gracias, y Halloween para llevar tus cosas de cada día."});
 function setLanguage(lang){
   const t = copy[lang] || copy.en;
   document.querySelectorAll("[data-i18n]").forEach(el => {
